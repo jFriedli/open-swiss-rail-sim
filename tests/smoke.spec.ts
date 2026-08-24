@@ -1,0 +1,2 @@
+import {test,expect} from '@playwright/test';
+test('loads corridor, wasm, and enters driving mode',async({page})=>{const errors:string[]=[];page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});await page.goto('./');await expect(page.getByText('Rapperswil → Uznach')).toBeVisible();await page.getByRole('button',{name:'DRIVE'}).click();await expect(page.locator('#start')).toHaveClass(/hidden/);await page.keyboard.press('w');await page.waitForTimeout(1200);await expect(page.locator('#notch')).toContainText('P1');expect(errors).toEqual([])});

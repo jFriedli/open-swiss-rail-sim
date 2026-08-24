@@ -40,6 +40,18 @@ impl TrainSim {
 
 impl Default for TrainSim { fn default() -> Self { Self::new() } }
 
+#[derive(Default)]
+pub struct BlockSystem { occupied: Vec<bool>, reserved: Vec<bool> }
+impl BlockSystem {
+    pub fn new(count: usize) -> Self { Self { occupied: vec![false;count], reserved:vec![false;count] } }
+    pub fn occupy(&mut self, block: usize, value: bool) { self.occupied[block]=value; }
+    pub fn reserve(&mut self, blocks: &[usize]) -> bool {
+        if blocks.iter().any(|&b| self.occupied[b] || self.reserved[b]) { return false; }
+        for &b in blocks { self.reserved[b]=true; } true
+    }
+    pub fn can_clear(&self, protected: usize) -> bool { !self.occupied[protected] && self.reserved[protected] }
+}
+
 pub fn lv95_to_local(e: f64, n: f64, h: f64, origin: (f64,f64,f64)) -> (f64,f64,f64) { (e-origin.0, h-origin.2, -(n-origin.1)) }
 
 #[cfg(test)]
@@ -50,4 +62,7 @@ mod tests {
     #[test] fn braking_decelerates() { let mut s=TrainSim::new(); s.set_controls(5,0); for _ in 0..1200{s.step(1./120.,0.)} let v=s.speed(); s.set_controls(0,5); for _ in 0..120{s.step(1./120.,0.)} assert!(s.speed()<v); }
     #[test] fn uphill_reduces_acceleration() { let mut a=TrainSim::new(); let mut b=TrainSim::new(); a.set_controls(5,0); b.set_controls(5,0); a.step(0.01,0.); b.step(0.01,20.); assert!(b.acceleration()<a.acceleration()); }
     #[test] fn deterministic() { let mut a=TrainSim::new(); let mut b=TrainSim::new(); a.set_controls(3,0); b.set_controls(3,0); for _ in 0..1000 { a.step(1./120.,7.); b.step(1./120.,7.); } assert_eq!(a.position(),b.position()); }
+    #[test] fn signal_fails_restrictive_without_route() { assert!(!BlockSystem::new(2).can_clear(1)); }
+    #[test] fn occupied_block_cannot_be_reserved() { let mut b=BlockSystem::new(2);b.occupy(1,true);assert!(!b.reserve(&[1]));assert!(!b.can_clear(1)); }
+    #[test] fn conflicting_reservation_is_rejected() { let mut b=BlockSystem::new(3);assert!(b.reserve(&[1,2]));assert!(!b.reserve(&[0,1])); }
 }
