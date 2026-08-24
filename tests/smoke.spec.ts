@@ -9,4 +9,4 @@ test('loads landscape layers and a streamed official building tile',async({page}
 
 test('minimap and deterministic journey progression remain operational',async({page})=>{await page.goto('./?debug=1&s=1000');await expect(page.locator('body')).toHaveAttribute('data-sim-ready','true',{timeout:20000});await expect(page.locator('#routeMap')).toBeVisible();await expect(page.locator('#journeyProgress')).toContainText('Blumenau');await page.evaluate(()=>window.__railSimDebug.setRoutePosition(11000));await expect(page.locator('#signal')).not.toHaveText('END');await expect(page.locator('#station')).toContainText('Uznach');await page.evaluate(()=>window.__railSimDebug.setRoutePosition(13490));await expect(page.locator('#journeyResult')).not.toHaveClass(/hidden/)});
 
-declare global{interface Window{__railSimDebug:{setRoutePosition(s:number):void}}}
+declare global{interface Window{__railSimDebug:{setRoutePosition(s:number):void;setScenarioTime(value:string):void;operations():{trains:{id:string;active:boolean;edge:string;speed:number;nextStop:string}[];occupied:[string,string[]][];routes:string[]}}}}

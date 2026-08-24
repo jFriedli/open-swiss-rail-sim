@@ -1,0 +1,70 @@
+{
+  "stats": {
+    "candidateTrips": 81,
+    "selectedAiServices": 3,
+    "playerTripActiveOnDate": true
+  },
+  "services": [
+    {
+      "tripId": ".ojp-91-4.1.TA.720.j26",
+      "name": "11448",
+      "direction": "Uznach \u2192 Rapperswil",
+      "stops": [
+        [
+          "Uznach",
+          "14:12:00",
+          "14:13:00"
+        ],
+        [
+          "Rapperswil SG",
+          "14:23:00",
+          "14:23:00"
+        ]
+      ]
+    },
+    {
+      "tripId": ".ojp-91-6-G.1.TA.235.j26",
+      "name": "11648",
+      "direction": "Uznach \u2192 Rapperswil",
+      "stops": [
+        [
+          "Uznach",
+          "14:14:00",
+          "14:15:00"
+        ],
+        [
+          "Schmerikon",
+          "14:17:00",
+          "14:17:00"
+        ],
+        [
+          "Blumenau",
+          "14:23:00",
+          "14:23:00"
+        ],
+        [
+          "Rapperswil SG",
+          "14:27:00",
+          "14:27:00"
+        ]
+      ]
+    },
+    {
+      "tripId": ".ojp-91-VAE.1.TA.426.j26",
+      "name": "2025",
+      "direction": "Rapperswil \u2192 Uznach",
+      "stops": [
+        [
+          "Rapperswil SG",
+          "14:03:00",
+          "14:07:00"
+        ],
+        [
+          "Uznach",
+          "14:17:00",
+          "14:17:00"
+        ]
+      ]
+    }
+  ]
+}

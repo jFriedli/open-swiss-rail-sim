@@ -1,10 +1,11 @@
 {
   "service": {
     "route": "S17",
-    "tripId": ".ojp-91-17-M.1.TA.15.j26",
-    "originalTripId": "ch:1:sjyid:100061:20253-001",
-    "tripShortName": "20253",
+    "tripId": ".ojp-91-17-M.1.TA.200.j26",
+    "originalTripId": "",
+    "tripShortName": "12353",
     "headsign": "Uznach",
+    "serviceDate": "2026-08-22",
     "feed": "GTFS_FP2026_20260822.zip",
     "publisher": "Gesch\u00e4ftsstelle SKI on behalf of BAV",
     "classification": "REAL STATIC TIMETABLE"

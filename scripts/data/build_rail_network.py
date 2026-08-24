@@ -4,7 +4,7 @@
 Ways are split only at shared OSM nodes, explicit railway switches, and endpoints.
 Projected line crossings are deliberately never joined.
 """
-import collections,json,math,pathlib
+import collections,heapq,json,math,pathlib
 
 SOURCE=pathlib.Path('data/intermediate/candidates/rapperswil_uznach.json')
 ROUTE=pathlib.Path('public/data/rapperswil-uznach/route.json')
@@ -48,11 +48,20 @@ def main():
             if nid not in coords:continue
             graph_nodes[str(nid)]={'id':str(nid),'position':local(nid),'type':'switch' if nid in switches else ('connection' if degree[nid]>1 else 'buffer'),'osmNodeId':nid,'tags':switches.get(nid,{}).get('tags',{})}
         tags=way.get('tags',{});edges.append({'id':f'e{len(edges)}','osmWayId':way['id'],'from':str(nodes[0]),'to':str(nodes[-1]),'points':points,'lengthM':round(length,2),'maxSpeedKmh':int(tags['maxspeed']) if str(tags.get('maxspeed','')).isdigit() else 80,'electrified':tags.get('electrified')=='contact_line','service':tags.get('service','main'),'usage':tags.get('usage',''),'trackRef':tags.get('railway:track_ref',tags.get('ref','')),'source':'OpenStreetMap'})
-    # Match the existing smoothed player centreline to its nearest graph edge sequence.
-    player=[]
-    for p in route['points'][::4]:
-        best=min(edges,key=lambda e:min((q[0]-p['x'])**2+(q[2]-p['z'])**2 for q in e['points']))
-        if not player or player[-1]!=best['id']:player.append(best['id'])
+    # Route through the graph while strongly preferring edges close to the selected
+    # smoothed centreline. Sampling alone can skip short OSM segments.
+    route_xy=[(p['x'],p['z']) for p in route['points']]
+    node_by_id={n['id']:n for n in graph_nodes.values()};src=min(node_by_id,key=lambda n:(node_by_id[n]['position'][0]-route_xy[0][0])**2+(node_by_id[n]['position'][2]-route_xy[0][1])**2);dst=min(node_by_id,key=lambda n:(node_by_id[n]['position'][0]-route_xy[-1][0])**2+(node_by_id[n]['position'][2]-route_xy[-1][1])**2)
+    adjacency_edges=collections.defaultdict(list)
+    for e in edges:adjacency_edges[e['from']].append((e['to'],e));adjacency_edges[e['to']].append((e['from'],e))
+    queue=[(0,src,[])];best_cost={src:0};player=[]
+    while queue:
+        cost,node,path=heapq.heappop(queue)
+        if cost!=best_cost[node]:continue
+        if node==dst:player=path;break
+        for other,e in adjacency_edges[node]:
+            mid=e['points'][len(e['points'])//2];off=min((mid[0]-x)**2+(mid[2]-z)**2 for x,z in route_xy)**.5;nc=cost+e['lengthM']*(1+(off/8)**2)
+            if nc<best_cost.get(other,1e30):best_cost[other]=nc;heapq.heappush(queue,(nc,other,path+[e['id']]))
     # Associate platform polygons to nearest edge, retaining the real polygon index.
     platforms=[]
     for i,poly in enumerate(land['platforms']):

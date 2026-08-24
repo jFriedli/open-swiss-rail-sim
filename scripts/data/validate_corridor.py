@@ -28,4 +28,7 @@ alignment=json.loads(pathlib.Path('data/manifests/building-alignment.json').read
 assert alignment['semanticPolygons']['roof']>0 and alignment['semanticPolygons']['wall']>0 and alignment['corrected']>7000
 network=json.loads(p.with_name('rail-network.json').read_text());node_ids={n['id'] for n in network['nodes']};assert len(node_ids)==network['stats']['nodes'] and network['stats']['edges']>100 and network['stats']['switches']>0
 assert all(e['from'] in node_ids and e['to'] in node_ids and e['lengthM']>0 and len(e['points'])>1 for e in network['edges']);assert network['stats']['connectedComponents']==1 and len(network['playerRouteEdges'])>10
+edge_ids={e['id'] for e in network['edges']};assert all(s.get('networkEdgeId') in edge_ids and s.get('protectedSections') for s in d['signals'])
+traffic=json.loads(p.with_name('traffic.json').read_text());assert traffic['stats']['selectedAiServices']>=3 and traffic['stats']['playerTripActiveOnDate'] is True
+assert all(service['path'] and all(part['edgeId'] in edge_ids for part in service['path']) for service in traffic['services'])
 print(f"Route points: {len(pts)}\nSignals matched: {len(d['signals'])}\nStations matched: {len(d['stations'])}\nSpeed sections: {len(d['speedLimits'])}\nTerrain vertices: {len(t['heights'])}\nTerrain triangles: {t['stats']['triangles']}\nWater polygons: {land['stats']['waterPolygons']}\nTree instances: {land['stats']['treeInstances']}\nBuildings: {building_count}\nBuilding triangles: {building_triangles}\nValidation errors: 0")

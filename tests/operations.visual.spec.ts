@@ -1,0 +1,3 @@
+import {test,expect} from '@playwright/test';
+test.skip(!process.env.CAPTURE_OPERATIONS,'manual operational capture');
+for(const checkpoint of [{name:'traffic-conflict',s:11000,time:'14:15:30',camera:'chase'},{name:'ai-station',s:13200,time:'14:14:30',camera:'chase'}])test(checkpoint.name,async({page})=>{const errors:string[]=[];page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});await page.goto(`./?debug=1&s=${checkpoint.s}&time=${checkpoint.time}&camera=${checkpoint.camera}`);await expect(page.locator('body')).toHaveAttribute('data-ai-trains',/[1-9]/,{timeout:20000});await page.waitForTimeout(1000);await page.screenshot({path:`test-results/${checkpoint.name}.png`});expect(errors).toEqual([])});

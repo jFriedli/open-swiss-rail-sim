@@ -3,7 +3,7 @@
 from __future__ import annotations
 import json,math,pathlib
 
-RAW=pathlib.Path('data/raw/railway/signals-full.json');ROUTE=pathlib.Path('public/data/rapperswil-uznach/route.json');OUT=pathlib.Path('data/manifests/signal-coverage.json')
+RAW=pathlib.Path('data/raw/railway/signals-full.json');ROUTE=pathlib.Path('public/data/rapperswil-uznach/route.json');NETWORK=pathlib.Path('public/data/rapperswil-uznach/rail-network.json');OUT=pathlib.Path('data/manifests/signal-coverage.json')
 
 def xy(lat,lon,lat0=47.225):return ((lon-8.816)*111320*math.cos(math.radians(lat0)),(lat-lat0)*111320)
 
@@ -40,7 +40,10 @@ def main():
     while cursor<points[-1]['s']-700:
         cursor=min(cursor+1500,points[-1]['s']-450)
         if all(abs(cursor+x-s['s'])>150 for s in dedup for x in (0,)):scenario.append({'id':f'scenario-{index:02d}','s':round(cursor,2),'tags':{'railway':'signal','railway:signal:direction':'forward','railway:signal:position':'right','provenance':'SIMULATED_SCENARIO','note':'scenario block boundary; not mapped infrastructure'}});index+=1
-    signals=sorted(dedup+scenario,key=lambda x:x['s']);route['signals']=signals;ROUTE.write_text(json.dumps(route,separators=(',',':')))
+    signals=sorted(dedup+scenario,key=lambda x:x['s']);network=json.loads(NETWORK.read_text());player_edges=network['playerRouteEdges']
+    for signal in signals:
+        index=min(len(player_edges)-1,max(0,int(signal['s']/points[-1]['s']*len(player_edges))));signal['networkEdgeId']=player_edges[index];signal['edgeOffsetClassification']='DERIVED_FROM_PLAYER_PATH';signal['protectedSections']=player_edges[index:index+30]
+    route['signals']=signals;ROUTE.write_text(json.dumps(route,separators=(',',':')))
     gaps=[b['s']-a['s'] for a,b in zip(signals,signals[1:])];summary={'routeLengthM':points[-1]['s'],'rawMappedSignals':len(signal_nodes),'matchedWithin12M':sum(x['distanceFromRouteM']<=12 for x in audit),'forwardMappedSignals':len(dedup),'reverseOrAmbiguous':sum(x['distanceFromRouteM']<=12 and not x['accepted'] for x in audit),'rejectedSignals':sum(not x['accepted'] for x in audit),'scenarioSignals':len(scenario),'largestGameplaySignalGapM':round(max(gaps),2),'lastMappedForwardSignalS':dedup[-1]['s'] if dedup else None,'mappedGapToRouteEndM':round(points[-1]['s']-(dedup[-1]['s'] if dedup else 0),2)}
     OUT.write_text(json.dumps({'summary':summary,'mappedCandidates':sorted(audit,key=lambda x:x['routeS']),'runtimeSignals':signals},indent=2)+'\n');print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()
