@@ -2,6 +2,8 @@
 
 A browser-based open-data railway driving simulator for the real 13.47 km Rapperswil–Uznach alignment. It combines sampled Swiss national elevation data and OpenStreetMap railway infrastructure with deterministic Rust/WASM train physics. Operational state is explicitly simulated.
 
+**Live simulator:** https://jfriedli.com/open-swiss-rail-sim/
+
 ## Features
 
 - Cab and chase cameras on an actual Swiss alignment
@@ -40,4 +42,3 @@ Terrain is a sampled corridor strip without orthophotography or buildings. Signa
 ## License and attribution
 
 Project code is MIT licensed. Runtime data attribution: © swisstopo; © OpenStreetMap contributors, ODbL. Dataset details and transformations are documented in `docs/DATA_PROVENANCE.md`.
-
