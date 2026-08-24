@@ -4,7 +4,9 @@ Research was checked against first-party sources on 24 August 2026. swisstopo pr
 
 SWISSIMAGE is officially supplied in LV95 as JPEG-compressed RGB Cloud Optimized GeoTIFF at 0.1 or 0.25 m ground resolution, with imagery from 2017 onward available for download. The federal WMS is also an official documented FSDI portrayal service. The runtime imagery is fetched reproducibly from the `ch.swisstopo.swissimage` WMS layer and downsampled to about 1.85 m/pixel WebP derivatives.
 
-swisstopo's OGD terms allow use, processing, commercial use, distribution and making derivatives accessible, with mandatory attribution such as `© swisstopo`. swissTLM3D is currently available annually in LV95/LN02 as GeoPackage, Shapefile, File Geodatabase or Interlis and includes hydrography, roads, land cover and forest. swissBUILDINGS3D 3.0 Beta is supplied in 1/16 national-map tiles in LV95/LN02; CityGML coverage depends on canton/EGID availability, while File Geodatabase is broader.
+swisstopo's OGD terms allow use, processing, commercial use, distribution and making derivatives accessible, with mandatory attribution such as `© swisstopo`. swissTLM3D is currently available annually in LV95/LN02 as GeoPackage, Shapefile, File Geodatabase or Interlis and includes hydrography, roads, land cover and forest. Its current national download is not corridor-tiled; this build therefore uses a reproducible OSM corridor extract for these vector layers and records that choice rather than downloading the full country.
+
+swissBUILDINGS3D 3.0 Beta is supplied in 1/16 national-map tiles in LV95/LN02. The documented SWISELD public asset search returned ten CityGML tiles intersecting the runtime extent. CityGML is available here and preserves LOD2 roof/wall surfaces, so it was selected over footprint extrusion. Source precision is approximately 0.3–0.5 m, but acquisition dates vary; the returned corridor assets are dated 2022.
 
 Swiss railway operating rules are published by the Federal Office of Transport in FDV R 300.1–.15; the A2025 rules have applied since 14 December 2025. This simulator does not claim full FDV, interlocking, train-protection or ETCS fidelity.
 
