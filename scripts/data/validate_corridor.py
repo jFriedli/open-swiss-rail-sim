@@ -26,4 +26,6 @@ for tile in scenery['buildings']['tiles']:
     building_count+=tile['buildingCount']
 alignment=json.loads(pathlib.Path('data/manifests/building-alignment.json').read_text());assert building_count==alignment['buildings']==7965 and building_triangles>400_000
 assert alignment['semanticPolygons']['roof']>0 and alignment['semanticPolygons']['wall']>0 and alignment['corrected']>7000
+network=json.loads(p.with_name('rail-network.json').read_text());node_ids={n['id'] for n in network['nodes']};assert len(node_ids)==network['stats']['nodes'] and network['stats']['edges']>100 and network['stats']['switches']>0
+assert all(e['from'] in node_ids and e['to'] in node_ids and e['lengthM']>0 and len(e['points'])>1 for e in network['edges']);assert network['stats']['connectedComponents']==1 and len(network['playerRouteEdges'])>10
 print(f"Route points: {len(pts)}\nSignals matched: {len(d['signals'])}\nStations matched: {len(d['stations'])}\nSpeed sections: {len(d['speedLimits'])}\nTerrain vertices: {len(t['heights'])}\nTerrain triangles: {t['stats']['triangles']}\nWater polygons: {land['stats']['waterPolygons']}\nTree instances: {land['stats']['treeInstances']}\nBuildings: {building_count}\nBuilding triangles: {building_triangles}\nValidation errors: 0")

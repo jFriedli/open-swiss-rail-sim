@@ -1,0 +1,8 @@
+import * as THREE from 'three';
+export type RailEdge={id:string;osmWayId:number;from:string;to:string;points:[number,number,number][];lengthM:number;maxSpeedKmh:number;electrified:boolean;service:string;source:string};
+export type RailNode={id:string;position:[number,number,number];type:'switch'|'connection'|'buffer';osmNodeId:number;tags:Record<string,string>};
+export type RailNetwork={version:number;nodes:RailNode[];edges:RailEdge[];switches:{id:string;nodeId:string;state:string;source:string}[];platformAssociations:{platformIndex:number;edgeId:string;distanceM:number;source:string}[];playerRouteEdges:string[];stats:{nodes:number;edges:number;switches:number;totalTrackKm:number;connectedComponents:number;playerRouteEdges:number}};
+
+export function offsetSegment(a:THREE.Vector3,b:THREE.Vector3,gauge=1.435){const tangent=b.clone().sub(a).normalize(),right=new THREE.Vector3(-tangent.z,0,tangent.x).normalize();return {leftA:a.clone().addScaledVector(right,-gauge/2),leftB:b.clone().addScaledVector(right,-gauge/2),rightA:a.clone().addScaledVector(right,gauge/2),rightB:b.clone().addScaledVector(right,gauge/2),right,tangent}}
+
+export function validateNetwork(network:RailNetwork){const ids=new Set(network.nodes.map(n=>n.id));if(ids.size!==network.nodes.length)throw Error('duplicate rail node');for(const edge of network.edges){if(!ids.has(edge.from)||!ids.has(edge.to))throw Error(`edge ${edge.id} has missing endpoint`);if(edge.points.length<2||edge.lengthM<=0)throw Error(`invalid edge ${edge.id}`);if(edge.points.flat().some(v=>!Number.isFinite(v)))throw Error(`non-finite edge ${edge.id}`)}return true}

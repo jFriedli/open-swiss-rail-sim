@@ -124,12 +124,12 @@
             "bytes": 2122242
           },
           "wall": {
-            "positions": "./buildings/tile-0-wall-21fbb0dda6.positions.bin",
-            "indices": "./buildings/tile-0-wall-21fbb0dda6.indices.bin",
-            "colors": "./buildings/tile-0-wall-21fbb0dda6.colors.bin",
-            "vertices": 136401,
+            "positions": "./buildings/tile-0-wall-a5ceb0c970.positions.bin",
+            "indices": "./buildings/tile-0-wall-a5ceb0c970.indices.bin",
+            "colors": "./buildings/tile-0-wall-a5ceb0c970.colors.bin",
+            "vertices": 136404,
             "triangles": 151175,
-            "bytes": 3860115
+            "bytes": 3860160
           },
           "other": {
             "positions": "",
@@ -153,12 +153,12 @@
             "bytes": 567492
           },
           "wall": {
-            "positions": "./buildings/tile-1-wall-faba86ed04.positions.bin",
-            "indices": "./buildings/tile-1-wall-faba86ed04.indices.bin",
-            "colors": "./buildings/tile-1-wall-faba86ed04.colors.bin",
-            "vertices": 35446,
+            "positions": "./buildings/tile-1-wall-153d4da492.positions.bin",
+            "indices": "./buildings/tile-1-wall-153d4da492.indices.bin",
+            "colors": "./buildings/tile-1-wall-153d4da492.colors.bin",
+            "vertices": 35452,
             "triangles": 39593,
-            "bytes": 1006806
+            "bytes": 1006896
           },
           "other": {
             "positions": "",
@@ -182,9 +182,9 @@
             "bytes": 545904
           },
           "wall": {
-            "positions": "./buildings/tile-2-wall-8d3f94361e.positions.bin",
-            "indices": "./buildings/tile-2-wall-8d3f94361e.indices.bin",
-            "colors": "./buildings/tile-2-wall-8d3f94361e.colors.bin",
+            "positions": "./buildings/tile-2-wall-37144bc4a0.positions.bin",
+            "indices": "./buildings/tile-2-wall-37144bc4a0.indices.bin",
+            "colors": "./buildings/tile-2-wall-37144bc4a0.colors.bin",
             "vertices": 33827,
             "triangles": 37931,
             "bytes": 962577
@@ -211,12 +211,12 @@
             "bytes": 1250673
           },
           "wall": {
-            "positions": "./buildings/tile-3-wall-c97d1927b6.positions.bin",
-            "indices": "./buildings/tile-3-wall-c97d1927b6.indices.bin",
-            "colors": "./buildings/tile-3-wall-c97d1927b6.colors.bin",
-            "vertices": 80409,
+            "positions": "./buildings/tile-3-wall-7807fea698.positions.bin",
+            "indices": "./buildings/tile-3-wall-7807fea698.indices.bin",
+            "colors": "./buildings/tile-3-wall-7807fea698.colors.bin",
+            "vertices": 80396,
             "triangles": 89473,
-            "bytes": 2279811
+            "bytes": 2279616
           },
           "other": {
             "positions": "",

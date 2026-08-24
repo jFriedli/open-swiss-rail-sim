@@ -1,0 +1,11 @@
+{
+  "nodes": 688,
+  "edges": 689,
+  "switches": 35,
+  "totalTrackKm": 31.54,
+  "connectedComponents": 1,
+  "componentNodeCounts": [
+    688
+  ],
+  "playerRouteEdges": 102
+}

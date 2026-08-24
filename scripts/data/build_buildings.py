@@ -8,7 +8,7 @@ from PIL import Image
 PRODUCT='ch.swisstopo.swissbuildings3d_3_0';API='https://ogd.swisstopo.admin.ch/services/swiseld/services'
 RAW=pathlib.Path('data/raw/scenery/buildings');OUT=pathlib.Path('public/data/rapperswil-uznach/buildings');MANIFEST=pathlib.Path('public/data/rapperswil-uznach/manifest.json');SCENERY=pathlib.Path('public/data/rapperswil-uznach/scenery-manifest.json');TERRAIN=pathlib.Path('public/data/rapperswil-uznach/terrain.json');REPORT=pathlib.Path('data/manifests/building-alignment.json')
 GML='{http://www.opengis.net/gml}';BLDG='{http://www.opengis.net/citygml/building/2.0}';SURFACES={'roof':BLDG+'RoofSurface','wall':BLDG+'WallSurface','ground':BLDG+'GroundSurface','other':BLDG+'ClosureSurface'}
-WALL_PALETTE=((210,204,190),(198,195,184),(224,216,198),(190,192,188),(218,207,184))
+WALL_PALETTE=((196,184,160),(181,181,174),(209,193,155),(169,181,184),(198,169,145),(184,151,137),(207,202,187))
 
 def assets(bounds):
     query={'format':'application/x.gml+zip','srid':2056,'state':'current','variant':'tiled','xMin':bounds[0],'xMax':bounds[1],'yMin':bounds[2],'yMax':bounds[3]}
