@@ -10,12 +10,13 @@ A browser-based open-data railway driving simulator for the real 13.47 km Rapper
 - 120 Hz longitudinal physics with traction, service/emergency braking, resistance, gradient and energy
 - Regular swissALTI3D-derived terrain grid, mapped speed sections, four route stops and 26 mapped signal positions
 - Route-local procedural rails, ballast, sleepers and synthetic catenary
+- Interactive combined traction/brake controller, emergency brake and speed/limit dial
 - Speed, limit, gradient, next signal/station and engineering telemetry HUD
 - In-app real/derived/simulated provenance inspector
 
 ## Controls
 
-W/Up increases power, S/Down increases brake, A releases a notch, Space applies emergency brake, C changes camera, and R restarts.
+The combined controller has neutral, P1–P5 power and B1–B5 service-brake notches. Click a labelled notch or drag the lever with mouse/touch. W/Up moves toward power, S/Down moves toward braking, A moves one notch toward neutral, Space applies the separate emergency brake, C changes camera, and R restarts. The current scenario's reverser is fixed Forward.
 
 ## Development
 
