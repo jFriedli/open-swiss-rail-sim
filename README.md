@@ -24,7 +24,7 @@ A browser-based open-data railway driving simulator for the real 13.47 km Rapper
 
 ## Controls
 
-The combined controller has neutral, P1–P5 power and B1–B5 service-brake notches. Click a labelled notch or drag the lever with mouse/touch. W/Up moves toward power, S/Down moves toward braking, A moves one notch toward neutral, Space applies the separate emergency brake, C changes camera, and R restarts. The current scenario's reverser is fixed Forward.
+The combined controller has neutral, P1–P5 power and B1–B5 service-brake notches. Click a labelled notch or drag the lever with mouse/touch. W/Up moves toward power, S/Down moves toward braking, A moves one notch toward neutral, Space applies the separate emergency brake, C changes camera, P/Escape pauses the shared player/traffic clock, and R deterministically restarts the scenario. The current scenario's reverser is fixed Forward.
 
 ## Development
 
