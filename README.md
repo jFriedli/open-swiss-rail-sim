@@ -8,14 +8,16 @@ A browser-based open-data railway driving simulator for the real 13.47 km Rapper
 
 - Cab and chase cameras on an actual Swiss alignment
 - 120 Hz longitudinal physics with traction, service/emergency braking, resistance, gradient and energy
-- Regular swissALTI3D-derived terrain grid, mapped speed sections, four route stops and 26 mapped signal positions
+- Regular swissALTI3D-derived terrain grid, mapped speed sections and audited full-route signal context
 - Real SWISSIMAGE ground imagery in four georeferenced, content-hashed scenery sectors
-- 7,974 real swissBUILDINGS3D LOD2 buildings, streamed as four batched meshes
+- 7,965 real swissBUILDINGS3D LOD2 buildings with semantic roofs/walls, derived roof colour and streamed sectors
 - Mapped Obersee/water surfaces, 171 km of surrounding roads, ten platforms and 2,242 forest-derived trees
 - Route-local procedural rails, ballast, sleepers and synthetic catenary
 - Interactive combined traction/brake controller, emergency brake and speed/limit dial
 - Speed, limit, gradient, next signal/station and engineering telemetry HUD
 - In-app real/derived/simulated provenance inspector
+- Geographic local-data minimap with heading, stations and route progress
+- Official static S17 timetable scenario with platform targets, dwell, missed-stop detection and journey completion
 
 ## Controls
 
@@ -33,7 +35,7 @@ npm run build
 npm run dev
 ```
 
-See [architecture](docs/ARCHITECTURE.md), [scenery](docs/SCENERY.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), [physics](docs/PHYSICS.md), [signalling](docs/SIGNALLING.md), [selection](docs/CORRIDOR_SELECTION.md), and [performance](docs/PERFORMANCE.md).
+See [architecture](docs/ARCHITECTURE.md), [scenery](docs/SCENERY.md), [journey](docs/JOURNEY.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), [physics](docs/PHYSICS.md), [signalling](docs/SIGNALLING.md), [selection](docs/CORRIDOR_SELECTION.md), and [performance](docs/PERFORMANCE.md).
 
 ## Deployment
 
@@ -41,7 +43,7 @@ Pushes to `main` run tests, build Rust/WASM and Vite, and deploy through the off
 
 ## Limitations
 
-Terrain still uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid, so small embankments and cuts are simplified. Orthophotography is intentionally reduced to about 1.85 m/pixel. Trees are synthetic instances within real mapped forest boundaries; roads, water and platforms use open-mapping geometry rather than swissTLM3D in this build. Building materials are neutral and untextured. Signal aspects and simplified authority are simulated, not live or recorded SBB state. No complete interlocking, ETCS/train-protection model, timetable, AI traffic, stop-result dialog or certified train model is claimed.
+Terrain still uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid, so small embankments and cuts are simplified. Orthophotography is intentionally reduced to about 1.85 m/pixel. Trees are synthetic instances within real mapped forest boundaries; roads, water and platforms use open-mapping geometry rather than swissTLM3D in this build. Roof colours are derived from orthophotography and walls use a muted deterministic palette, not official material data. OpenStreetMap signal coverage ends near s=1.07 km, so eight clearly classified scenario signals fill the gameplay gap. Signal aspects and authority are simulated. The static timetable is real, but the player run, dwell, score and doors are simulated. No complete interlocking, ETCS/train-protection model, AI traffic or certified train model is claimed.
 
 ## License and attribution
 
