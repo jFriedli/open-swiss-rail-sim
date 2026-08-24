@@ -18,6 +18,9 @@ A browser-based open-data railway driving simulator for the real 13.47 km Rapper
 - In-app real/derived/simulated provenance inspector
 - Geographic local-data minimap with heading, stations and route progress
 - Official static S17 timetable scenario with platform targets, dwell, missed-stop detection and journey completion
+- 31.54 km OSM rail graph with 689 edges, 35 switches and surrounding station tracks
+- Three official-timetable AI services with deterministic motion, dwell and train-length occupancy
+- Simplified fail-safe section reservation, switch locking and traffic-driven signal aspects
 
 ## Controls
 
@@ -35,7 +38,7 @@ npm run build
 npm run dev
 ```
 
-See [architecture](docs/ARCHITECTURE.md), [scenery](docs/SCENERY.md), [journey](docs/JOURNEY.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), [physics](docs/PHYSICS.md), [signalling](docs/SIGNALLING.md), [selection](docs/CORRIDOR_SELECTION.md), and [performance](docs/PERFORMANCE.md).
+See [architecture](docs/ARCHITECTURE.md), [rail network](docs/RAIL_NETWORK.md), [traffic](docs/TRAFFIC.md), [interlocking](docs/INTERLOCKING.md), [scenery](docs/SCENERY.md), [journey](docs/JOURNEY.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), [physics](docs/PHYSICS.md), [signalling](docs/SIGNALLING.md), [selection](docs/CORRIDOR_SELECTION.md), and [performance](docs/PERFORMANCE.md).
 
 ## Deployment
 
@@ -43,7 +46,7 @@ Pushes to `main` run tests, build Rust/WASM and Vite, and deploy through the off
 
 ## Limitations
 
-Terrain still uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid, so small embankments and cuts are simplified. Orthophotography is intentionally reduced to about 1.85 m/pixel. Trees are synthetic instances within real mapped forest boundaries; roads, water and platforms use open-mapping geometry rather than swissTLM3D in this build. Roof colours are derived from orthophotography and walls use a muted deterministic palette, not official material data. OpenStreetMap signal coverage ends near s=1.07 km, so eight clearly classified scenario signals fill the gameplay gap. Signal aspects and authority are simulated. The static timetable is real, but the player run, dwell, score and doors are simulated. No complete interlocking, ETCS/train-protection model, AI traffic or certified train model is claimed.
+Terrain still uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid, so small embankments and cuts are simplified. Orthophotography is intentionally reduced to about 1.85 m/pixel. Trees are synthetic instances within real mapped forest boundaries; roads, water and platforms use open-mapping geometry rather than swissTLM3D in this build. Roof colours are derived from orthophotography and walls use a muted deterministic palette, not official material data. OpenStreetMap signal coverage ends near s=1.07 km, so eight clearly classified scenario signals fill the gameplay gap. Detection sections, switch states, route locking, AI motion and signal aspects are simplified simulations, not SBB operational data. No complete SBB interlocking, ETCS/train-protection model or certified train model is claimed.
 
 ## License and attribution
 

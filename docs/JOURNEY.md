@@ -1,6 +1,6 @@
 # Journey scenario
 
-The scenario uses official Swiss static timetable feed `GTFS_FP2026_20260822.zip`, published by Geschäftsstelle SKI on behalf of BAV. It selects S17 trip `.ojp-91-17-M.1.TA.15.j26` (trip 20253), Rapperswil–Uznach, with planned calls at 14:03, 14:05, 14:11, and 14:14.
+The scenario uses official Swiss static timetable feed `GTFS_FP2026_20260822.zip`, published by Geschäftsstelle SKI on behalf of BAV. Calendar validation selects active Saturday S17 trip `.ojp-91-17-M.1.TA.200.j26` (trip 12353), Rapperswil–Uznach, with planned calls at 14:03, 14:05, 14:11, and 14:14.
 
 Required calls are Rapperswil SG (departure), Blumenau, Schmerikon, and Uznach. Each is matched to an OpenStreetMap platform; target points are derived from platform extent, train length, and travel direction. A stop is accepted below 0.5 km/h within ±10 m (perfect ±2 m, good ±5 m). Intermediate/final dwell is 12 seconds, during which traction is inhibited. Passing 15 m beyond the platform end records a miss without teleporting the train.
 
