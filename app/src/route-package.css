@@ -1,0 +1,20 @@
+.routeChoices {
+  display: grid;
+  gap: 7px;
+  margin: 16px 0;
+  max-height: 190px;
+  overflow: auto;
+}
+.routeChoices a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 12px;
+  border: 1px solid #ffffff28;
+  border-radius: 5px;
+  color: inherit;
+  text-decoration: none;
+  background: #07130eb0;
+}
+.routeChoices a.selected { border-color: #58c98c; background: #123126; }
+.routeChoices small { opacity: .72; text-align: right; }
