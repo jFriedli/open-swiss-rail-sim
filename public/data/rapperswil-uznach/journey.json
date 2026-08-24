@@ -1,0 +1,78 @@
+{
+  "service": {
+    "route": "S17",
+    "tripId": ".ojp-91-17-M.1.TA.15.j26",
+    "originalTripId": "ch:1:sjyid:100061:20253-001",
+    "tripShortName": "20253",
+    "headsign": "Uznach",
+    "feed": "GTFS_FP2026_20260822.zip",
+    "publisher": "Gesch\u00e4ftsstelle SKI on behalf of BAV",
+    "classification": "REAL STATIC TIMETABLE"
+  },
+  "direction": "Rapperswil \u2192 Uznach",
+  "scenarioStart": "14:03:00",
+  "stops": [
+    {
+      "id": "3074774945",
+      "name": "Rapperswil SG",
+      "s": 0.0,
+      "platformIndex": 2,
+      "platformStartS": 0.0,
+      "platformEndS": 844.2,
+      "targetS": 0.0,
+      "scheduledArrival": "14:03:00",
+      "scheduledDeparture": "14:03:00",
+      "dwellSeconds": 0,
+      "locationSource": "OpenStreetMap",
+      "platformSource": "OpenStreetMap",
+      "targetClassification": "DERIVED"
+    },
+    {
+      "id": "3138127429",
+      "name": "Blumenau",
+      "s": 2594.2,
+      "platformIndex": 8,
+      "platformStartS": 2394.2,
+      "platformEndS": 2594.2,
+      "targetS": 2577.2,
+      "scheduledArrival": "14:05:00",
+      "scheduledDeparture": "14:05:00",
+      "dwellSeconds": 12,
+      "locationSource": "OpenStreetMap",
+      "platformSource": "OpenStreetMap",
+      "targetClassification": "DERIVED"
+    },
+    {
+      "id": "3074774949",
+      "name": "Schmerikon",
+      "s": 10593.8,
+      "platformIndex": 6,
+      "platformStartS": 10518.8,
+      "platformEndS": 10793.8,
+      "targetS": 10776.8,
+      "scheduledArrival": "14:11:00",
+      "scheduledDeparture": "14:11:00",
+      "dwellSeconds": 12,
+      "locationSource": "OpenStreetMap",
+      "platformSource": "OpenStreetMap",
+      "targetClassification": "DERIVED"
+    },
+    {
+      "id": "3074774952",
+      "name": "Uznach",
+      "s": 13418.7,
+      "platformIndex": 5,
+      "platformStartS": 13268.7,
+      "platformEndS": 13468.3,
+      "targetS": 13451.3,
+      "scheduledArrival": "14:14:00",
+      "scheduledDeparture": "14:14:00",
+      "dwellSeconds": 12,
+      "locationSource": "OpenStreetMap",
+      "platformSource": "OpenStreetMap",
+      "targetClassification": "DERIVED"
+    }
+  ],
+  "platformsMatched": 4,
+  "generatedFrom": "official GTFS stop sequence plus OSM station/platform geometry"
+}

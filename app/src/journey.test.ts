@@ -1,0 +1,10 @@
+import {describe,expect,it} from 'vitest';
+import {JourneyState,SignalProgression,interpolateGeo,parseClock} from './journey';
+const stops=[{id:'a',name:'A',s:0,platformIndex:0,platformStartS:0,platformEndS:100,targetS:0,scheduledArrival:'14:00:00',scheduledDeparture:'14:00:00',dwellSeconds:0,locationSource:'OSM',platformSource:'OSM',targetClassification:'DERIVED'},{id:'b',name:'B',s:1000,platformIndex:1,platformStartS:900,platformEndS:1100,targetS:1050,scheduledArrival:'14:02:00',scheduledDeparture:'14:02:00',dwellSeconds:10,locationSource:'OSM',platformSource:'OSM',targetClassification:'DERIVED'},{id:'c',name:'C',s:2000,platformIndex:2,platformStartS:1900,platformEndS:2100,targetS:2050,scheduledArrival:'14:04:00',scheduledDeparture:'14:04:00',dwellSeconds:5,locationSource:'OSM',platformSource:'OSM',targetClassification:'DERIVED'}];
+describe('journey events',()=>{
+ it('accepts a stop, locks traction, dwells, and advances',()=>{const j=new JourneyState(stops,parseClock('14:00:00'));expect(j.update(1040,1051,.2,120)[0].type).toBe('StationApproach');expect(j.statuses[1]).toBe('dwelling');expect(j.tractionLocked).toBe(true);expect(j.update(1051,1051,0,10).some(e=>e.type==='DwellComplete')).toBe(true);expect(j.currentIndex).toBe(2)});
+ it('detects high-speed overshoot and final completion',()=>{const j=new JourneyState(stops,0);expect(j.update(800,1200,100,1).some(e=>e.type==='StationMissed')).toBe(true);expect(j.update(1800,2200,100,1).some(e=>e.type==='RouteComplete')).toBe(true)});
+ it('does not accept a moving train in the target window',()=>{const j=new JourneyState(stops,0);j.update(1000,1050,5,1);expect(j.statuses[1]).toBe('pending')});
+});
+describe('signal progression',()=>{it('sorts, advances across large steps and never repeats',()=>{const p=new SignalProgression([{id:'b',s:200,tags:{}},{id:'a',s:100,tags:{}}]);expect(p.next(0)?.id).toBe('a');expect(p.advance(0,250)).toHaveLength(2);expect(p.advance(0,250)).toHaveLength(0);expect(p.next(101)?.id).toBe('b')})});
+it('interpolates valid source geography',()=>expect(interpolateGeo([{s:0,lat:47,lon:8},{s:100,lat:48,lon:9}],50)).toEqual({lat:47.5,lon:8.5}));

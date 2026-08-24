@@ -1,0 +1,1542 @@
+{
+  "summary": {
+    "routeLengthM": 13468.28,
+    "rawMappedSignals": 69,
+    "matchedWithin12M": 18,
+    "forwardMappedSignals": 10,
+    "reverseOrAmbiguous": 8,
+    "rejectedSignals": 59,
+    "scenarioSignals": 8,
+    "largestGameplaySignalGapM": 1500.0,
+    "lastMappedForwardSignalS": 1071.0,
+    "mappedGapToRouteEndM": 12397.28
+  },
+  "mappedCandidates": [
+    {
+      "sourceId": 14094396580,
+      "lat": 47.2245688,
+      "lon": 8.8159208,
+      "routeS": 73.93,
+      "distanceFromRouteM": 15.44,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:n",
+        "railway:signal:distant:form": "light",
+        "railway:signal:distant:repeated": "yes",
+        "railway:signal:distant:states": "CH-FDV:521;CH-FDV:533"
+      },
+      "wayAlignmentDot": 295.25,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 4252262013,
+      "lat": 47.2245439,
+      "lon": 8.8150562,
+      "routeS": 139.44,
+      "distanceFromRouteM": 0.35,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": 396.71,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 9187394036,
+      "lat": 47.2244299,
+      "lon": 8.8148484,
+      "routeS": 159.29,
+      "distanceFromRouteM": 4.46,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": -441.03,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 1126502495,
+      "lat": 47.2105247,
+      "lon": 8.796093,
+      "routeS": 324.92,
+      "distanceFromRouteM": 1937.11,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light"
+      },
+      "wayAlignmentDot": -1209.84,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 1126502650,
+      "lat": 47.2105068,
+      "lon": 8.7961359,
+      "routeS": 324.92,
+      "distanceFromRouteM": 1936.43,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light"
+      },
+      "wayAlignmentDot": -1202.15,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224264,
+      "lat": 47.1967671,
+      "lon": 8.8146139,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2974.72,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "block",
+        "railway:signal:combined:height": "normal",
+        "railway:signal:combined:states": "CH-FDV:522;CH-FDV:526;CH-FDV:533"
+      },
+      "wayAlignmentDot": -356.14,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224265,
+      "lat": 47.1967704,
+      "lon": 8.8146705,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2974.51,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "block",
+        "railway:signal:combined:height": "normal",
+        "railway:signal:combined:states": "CH-FDV:522;CH-FDV:526;CH-FDV:533"
+      },
+      "wayAlignmentDot": 367.72,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224266,
+      "lat": 47.1947551,
+      "lon": 8.8178644,
+      "routeS": 324.92,
+      "distanceFromRouteM": 3216.1,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light",
+        "railway:signal:distant:height": "normal",
+        "railway:signal:distant:states": "CH-FDV:519;CH-FDV:528"
+      },
+      "wayAlignmentDot": -266.95,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224267,
+      "lat": 47.1947238,
+      "lon": 8.817843,
+      "routeS": 324.92,
+      "distanceFromRouteM": 3219.39,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light",
+        "railway:signal:distant:height": "normal",
+        "railway:signal:distant:states": "CH-FDV:519;CH-FDV:528"
+      },
+      "wayAlignmentDot": 264.77,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224269,
+      "lat": 47.1999838,
+      "lon": 8.8117027,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2617.24,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "block",
+        "railway:signal:main:height": "normal",
+        "railway:signal:main:states": "CH-FDV:524;CH-FDV:530"
+      },
+      "wayAlignmentDot": 89.91,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224270,
+      "lat": 47.1999608,
+      "lon": 8.8116687,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2619.91,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "block",
+        "railway:signal:main:height": "normal",
+        "railway:signal:main:states": "CH-FDV:524;CH-FDV:530"
+      },
+      "wayAlignmentDot": -85.12,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224271,
+      "lat": 47.2013704,
+      "lon": 8.8044368,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2548.27,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:l",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "block",
+        "railway:signal:combined:height": "normal",
+        "railway:signal:combined:states": "CH-FDV:520;CH-FDV:525;CH-FDV:531"
+      },
+      "wayAlignmentDot": 1710.1,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 10239224272,
+      "lat": 47.2014043,
+      "lon": 8.8044436,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2544.49,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:l",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "block",
+        "railway:signal:combined:height": "normal",
+        "railway:signal:combined:states": "CH-FDV:520;CH-FDV:525;CH-FDV:531"
+      },
+      "wayAlignmentDot": -17061.26,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 13875976852,
+      "lat": 47.2165042,
+      "lon": 8.8043994,
+      "routeS": 324.92,
+      "distanceFromRouteM": 1022.54,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:n",
+        "railway:signal:distant:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:540",
+        "railway:signal:speed_limit_distant:form": "light",
+        "railway:signal:station_distant": "CH-FDV:568",
+        "railway:signal:station_distant:form": "sign"
+      },
+      "wayAlignmentDot": -3380.81,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 13875976853,
+      "lat": 47.2104458,
+      "lon": 8.796023,
+      "routeS": 324.92,
+      "distanceFromRouteM": 1947.18,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "block"
+      },
+      "wayAlignmentDot": -823.34,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 13875976854,
+      "lat": 47.2104288,
+      "lon": 8.7960654,
+      "routeS": 324.92,
+      "distanceFromRouteM": 1946.46,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "block"
+      },
+      "wayAlignmentDot": -808.08,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 13875976862,
+      "lat": 47.2134395,
+      "lon": 8.7994568,
+      "routeS": 324.92,
+      "distanceFromRouteM": 1526.03,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "exit"
+      },
+      "wayAlignmentDot": -642.66,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396582,
+      "lat": 47.2212489,
+      "lon": 8.8105158,
+      "routeS": 324.92,
+      "distanceFromRouteM": 320.65,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "entry",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light",
+        "railway:signal:station": "CH-FDV:267",
+        "railway:signal:station:caption": "Rw",
+        "railway:signal:station:form": "sign",
+        "railway:signal:station:type": "start"
+      },
+      "wayAlignmentDot": -4126.53,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396583,
+      "lat": 47.2212546,
+      "lon": 8.8105227,
+      "routeS": 324.92,
+      "distanceFromRouteM": 319.83,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:station": "CH-FDV:268",
+        "railway:signal:station:caption": "Rw",
+        "railway:signal:station:form": "sign",
+        "railway:signal:station:type": "end"
+      },
+      "wayAlignmentDot": -4840.42,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396584,
+      "lat": 47.2201077,
+      "lon": 8.8091385,
+      "routeS": 324.92,
+      "distanceFromRouteM": 484.91,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:709",
+        "railway:signal:electricity:form": "light",
+        "railway:signal:electricity:states": "CH-FDV:709;off",
+        "railway:signal:electricity:type": "power_off_advance"
+      },
+      "wayAlignmentDot": -5038.82,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396585,
+      "lat": 47.2198486,
+      "lon": 8.8088253,
+      "routeS": 324.92,
+      "distanceFromRouteM": 522.22,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light",
+        "railway:signal:station_distant": "CH-FDV:565",
+        "railway:signal:station_distant:form": "sign"
+      },
+      "wayAlignmentDot": -1574.93,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396586,
+      "lat": 47.2180822,
+      "lon": 8.8066838,
+      "routeS": 324.92,
+      "distanceFromRouteM": 776.93,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:711",
+        "railway:signal:electricity:1states": "CH-FDV:711;off",
+        "railway:signal:electricity:form": "light",
+        "railway:signal:electricity:type": "power_off"
+      },
+      "wayAlignmentDot": -176.79,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396587,
+      "lat": 47.2175131,
+      "lon": 8.8059474,
+      "routeS": 324.92,
+      "distanceFromRouteM": 861.23,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:711",
+        "railway:signal:electricity:form": "light",
+        "railway:signal:electricity:states": "CH-FDV:711;off",
+        "railway:signal:electricity:type": "power_off"
+      },
+      "wayAlignmentDot": -604.56,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396588,
+      "lat": 47.2175208,
+      "lon": 8.8059578,
+      "routeS": 324.92,
+      "distanceFromRouteM": 860.07,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:713",
+        "railway:signal:electricity:form": "light",
+        "railway:signal:electricity:states": "CH-FDV:713;off",
+        "railway:signal:electricity:type": "power_on"
+      },
+      "wayAlignmentDot": -538.05,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396589,
+      "lat": 47.2180748,
+      "lon": 8.8066748,
+      "routeS": 324.92,
+      "distanceFromRouteM": 778.0,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:713",
+        "railway:signal:electricity:form": "light",
+        "railway:signal:electricity:states": "CH-FDV:713;off",
+        "railway:signal:electricity:type": "power_on"
+      },
+      "wayAlignmentDot": -605.36,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396590,
+      "lat": 47.2159382,
+      "lon": 8.8034848,
+      "routeS": 324.92,
+      "distanceFromRouteM": 1115.44,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:709",
+        "railway:signal:electricity:form": "light",
+        "railway:signal:electricity:states": "CH-FDV:709;off",
+        "railway:signal:electricity:type": "power_off_advance"
+      },
+      "wayAlignmentDot": -8514.59,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396591,
+      "lat": 47.2089868,
+      "lon": 8.795068,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2117.03,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:station_distant": "CH-FDV:565",
+        "railway:signal:station_distant:form": "sign"
+      },
+      "wayAlignmentDot": -2434.54,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396592,
+      "lat": 47.2090005,
+      "lon": 8.79502,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2118.22,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:station_distant": "CH-FDV:565",
+        "railway:signal:station_distant:form": "sign"
+      },
+      "wayAlignmentDot": -579.05,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396593,
+      "lat": 47.2051007,
+      "lon": 8.7910823,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2642.26,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light",
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "entry"
+      },
+      "wayAlignmentDot": 2449.91,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396594,
+      "lat": 47.205081,
+      "lon": 8.7911266,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2641.84,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light",
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "entry"
+      },
+      "wayAlignmentDot": 2585.44,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396595,
+      "lat": 47.2050465,
+      "lon": 8.791082,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2646.95,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light"
+      },
+      "wayAlignmentDot": 1718.94,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396596,
+      "lat": 47.2050673,
+      "lon": 8.7910394,
+      "routeS": 324.92,
+      "distanceFromRouteM": 2647.19,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light"
+      },
+      "wayAlignmentDot": 1717.38,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 9187386139,
+      "lat": 47.2241773,
+      "lon": 8.8144865,
+      "routeS": 448.9,
+      "distanceFromRouteM": 5.31,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": 559.4,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 1609045206,
+      "lat": 47.2242997,
+      "lon": 8.8147106,
+      "routeS": 469.22,
+      "distanceFromRouteM": 10.73,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": -288.0,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 9187386049,
+      "lat": 47.2241525,
+      "lon": 8.8148612,
+      "routeS": 474.19,
+      "distanceFromRouteM": 8.58,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": 690.31,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 9187386046,
+      "lat": 47.2241937,
+      "lon": 8.8148594,
+      "routeS": 475.65,
+      "distanceFromRouteM": 4.23,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": 566.72,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 14094396581,
+      "lat": 47.2243172,
+      "lon": 8.8152102,
+      "routeS": 505.29,
+      "distanceFromRouteM": 0.26,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": -210.53,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 14094396579,
+      "lat": 47.2242903,
+      "lon": 8.815311,
+      "routeS": 511.76,
+      "distanceFromRouteM": 4.76,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:n",
+        "railway:signal:distant:form": "light",
+        "railway:signal:distant:repeated": "yes",
+        "railway:signal:distant:states": "CH-FDV:521;CH-FDV:533"
+      },
+      "wayAlignmentDot": 188.16,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 696109877,
+      "lat": 47.2245254,
+      "lon": 8.8159308,
+      "routeS": 562.97,
+      "distanceFromRouteM": 11.15,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:n",
+        "railway:signal:distant:form": "light",
+        "railway:signal:distant:repeated": "yes",
+        "railway:signal:distant:states": "CH-FDV:521;CH-FDV:533"
+      },
+      "wayAlignmentDot": 411.17,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 9187358787,
+      "lat": 47.2243804,
+      "lon": 8.8166597,
+      "routeS": 614.71,
+      "distanceFromRouteM": 13.62,
+      "mappedDirection": "forward",
+      "mappedSide": null,
+      "mappedType": {},
+      "wayAlignmentDot": 900.12,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 9187395500,
+      "lat": 47.2245046,
+      "lon": 8.8170328,
+      "routeS": 644.75,
+      "distanceFromRouteM": 4.49,
+      "mappedDirection": "forward",
+      "mappedSide": null,
+      "mappedType": {},
+      "wayAlignmentDot": 1720.12,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 1609045242,
+      "lat": 47.224582,
+      "lon": 8.8173605,
+      "routeS": 670.59,
+      "distanceFromRouteM": 0.03,
+      "mappedDirection": "backward",
+      "mappedSide": null,
+      "mappedType": {},
+      "wayAlignmentDot": -1366.58,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 9187395501,
+      "lat": 47.2247143,
+      "lon": 8.8181976,
+      "routeS": 735.6,
+      "distanceFromRouteM": 0.05,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": -595.74,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 9187357106,
+      "lat": 47.2248476,
+      "lon": 8.8186912,
+      "routeS": 775.2,
+      "distanceFromRouteM": 4.99,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": 1067.1,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 1609045300,
+      "lat": 47.2249163,
+      "lon": 8.8189287,
+      "routeS": 794.19,
+      "distanceFromRouteM": 8.89,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": -1664.74,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 9187357107,
+      "lat": 47.2250262,
+      "lon": 8.8191867,
+      "routeS": 815.19,
+      "distanceFromRouteM": 17.82,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": 6897.03,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 9187357108,
+      "lat": 47.2251113,
+      "lon": 8.8195757,
+      "routeS": 845.65,
+      "distanceFromRouteM": 22.67,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": -6929.26,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396578,
+      "lat": 47.225035,
+      "lon": 8.8207772,
+      "routeS": 934.02,
+      "distanceFromRouteM": 0.0,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": -3012.09,
+      "accepted": false,
+      "reason": "opposes simulation direction"
+    },
+    {
+      "sourceId": 9186800874,
+      "lat": 47.2250908,
+      "lon": 8.8213224,
+      "routeS": 975.71,
+      "distanceFromRouteM": 0.05,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate"
+      },
+      "wayAlignmentDot": -1920.99,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 9186782516,
+      "lat": 47.2251449,
+      "lon": 8.8214825,
+      "routeS": 988.44,
+      "distanceFromRouteM": 4.59,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": 1343.33,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 14094396577,
+      "lat": 47.2252691,
+      "lon": 8.822561,
+      "routeS": 1071.0,
+      "distanceFromRouteM": 9.03,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": -588.38,
+      "accepted": true,
+      "reason": "accepted"
+    },
+    {
+      "sourceId": 9186813170,
+      "lat": 47.2254615,
+      "lon": 8.8258452,
+      "routeS": 1317.5,
+      "distanceFromRouteM": 17.35,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549;CH-FDV-217",
+        "railway:signal:speed_limit:form": "light;sign",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": -880.1,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 9186854339,
+      "lat": 47.2254238,
+      "lon": 8.8258513,
+      "routeS": 1318.39,
+      "distanceFromRouteM": 13.23,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549;CH-FDV-217",
+        "railway:signal:speed_limit:form": "light;sign",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": 983.35,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 9186813173,
+      "lat": 47.2254852,
+      "lon": 8.827363,
+      "routeS": 1426.46,
+      "distanceFromRouteM": 43.06,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate"
+      },
+      "wayAlignmentDot": -787.58,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 9186854334,
+      "lat": 47.2254478,
+      "lon": 8.8273665,
+      "routeS": 1427.68,
+      "distanceFromRouteM": 39.07,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": 677.25,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396575,
+      "lat": 47.2274083,
+      "lon": 8.8326872,
+      "routeS": 1806.7,
+      "distanceFromRouteM": 322.16,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate"
+      },
+      "wayAlignmentDot": -639.15,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396576,
+      "lat": 47.22739,
+      "lon": 8.8327285,
+      "routeS": 1810.04,
+      "distanceFromRouteM": 320.51,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate"
+      },
+      "wayAlignmentDot": 572.19,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396574,
+      "lat": 47.2277115,
+      "lon": 8.833033,
+      "routeS": 1828.68,
+      "distanceFromRouteM": 358.77,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": -403.29,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396573,
+      "lat": 47.2276907,
+      "lon": 8.8330707,
+      "routeS": 1831.78,
+      "distanceFromRouteM": 356.81,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint"
+      },
+      "wayAlignmentDot": 454.73,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396572,
+      "lat": 47.2286446,
+      "lon": 8.8338638,
+      "routeS": 1878.78,
+      "distanceFromRouteM": 469.33,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": 309.87,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396571,
+      "lat": 47.2294886,
+      "lon": 8.8342349,
+      "routeS": 1895.54,
+      "distanceFromRouteM": 565.94,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light"
+      },
+      "wayAlignmentDot": -149.49,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396569,
+      "lat": 47.232389,
+      "lon": 8.8350843,
+      "routeS": 1921.18,
+      "distanceFromRouteM": 894.14,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit"
+      },
+      "wayAlignmentDot": -99.11,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396570,
+      "lat": 47.2323823,
+      "lon": 8.8351351,
+      "routeS": 1925.08,
+      "distanceFromRouteM": 893.85,
+      "mappedDirection": "forward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:catenary_mast": "yes",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit"
+      },
+      "wayAlignmentDot": 401.15,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396568,
+      "lat": 47.2361927,
+      "lon": 8.8367397,
+      "routeS": 1995.45,
+      "distanceFromRouteM": 1329.38,
+      "mappedDirection": "backward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "entry",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light",
+        "railway:signal:station": "CH-FDV:267",
+        "railway:signal:station:caption": "Rw",
+        "railway:signal:station:form": "sign",
+        "railway:signal:station:type": "start"
+      },
+      "wayAlignmentDot": 313.03,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396567,
+      "lat": 47.2388789,
+      "lon": 8.8448926,
+      "routeS": 2571.75,
+      "distanceFromRouteM": 1699.12,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:l",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "block"
+      },
+      "wayAlignmentDot": 4535.68,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396566,
+      "lat": 47.2389329,
+      "lon": 8.8458097,
+      "routeS": 2637.79,
+      "distanceFromRouteM": 1713.32,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:combined": "CH-FDV:l",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "block"
+      },
+      "wayAlignmentDot": 8271.33,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396565,
+      "lat": 47.2398159,
+      "lon": 8.8531672,
+      "routeS": 3180.54,
+      "distanceFromRouteM": 1876.79,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:main": "CH-FDV:l",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "block"
+      },
+      "wayAlignmentDot": 635.47,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396564,
+      "lat": 47.2409293,
+      "lon": 8.8560327,
+      "routeS": 3380.98,
+      "distanceFromRouteM": 2025.51,
+      "mappedDirection": "backward",
+      "mappedSide": "right",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light"
+      },
+      "wayAlignmentDot": 520.41,
+      "accepted": false,
+      "reason": "too far from selected track"
+    },
+    {
+      "sourceId": 14094396563,
+      "lat": 47.2490011,
+      "lon": 8.8638061,
+      "routeS": 3855.21,
+      "distanceFromRouteM": 2986.68,
+      "mappedDirection": "forward",
+      "mappedSide": "left",
+      "mappedType": {
+        "railway:signal:distant": "CH-FDV:l",
+        "railway:signal:distant:form": "light"
+      },
+      "wayAlignmentDot": -156.0,
+      "accepted": false,
+      "reason": "too far from selected track"
+    }
+  ],
+  "runtimeSignals": [
+    {
+      "id": 4252262013,
+      "s": 139.44,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:direction": "forward",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint",
+        "railway:signal:position": "right",
+        "ref": "B1",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 9187394036,
+      "s": 159.29,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "exit",
+        "railway:signal:direction": "backward",
+        "railway:signal:electricity": "CH-FDV:714",
+        "railway:signal:electricity:form": "sign",
+        "railway:signal:electricity:type": "joint",
+        "railway:signal:position": "right",
+        "ref": "B2",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 9187395500,
+      "s": 644.75,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 1609045242,
+      "s": 670.59,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "backward",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 9187395501,
+      "s": 735.6,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:direction": "backward",
+        "railway:signal:position": "right",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 9187357106,
+      "s": 775.2,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "left",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 1609045300,
+      "s": 794.19,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:direction": "backward",
+        "railway:signal:position": "right",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 9186800874,
+      "s": 975.71,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:direction": "backward",
+        "railway:signal:position": "right",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 9186782516,
+      "s": 988.44,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "left",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": 14094396577,
+      "s": 1071.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:combined": "CH-FDV:n",
+        "railway:signal:combined:form": "light",
+        "railway:signal:combined:function": "intermediate",
+        "railway:signal:direction": "backward",
+        "railway:signal:position": "right",
+        "railway:signal:speed_limit": "CH-FDV:549",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit_distant": "CH-FDV:541",
+        "railway:signal:speed_limit_distant:form": "light",
+        "provenance": "OPEN_MAPPING"
+      }
+    },
+    {
+      "id": "scenario-01",
+      "s": 2571.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    },
+    {
+      "id": "scenario-02",
+      "s": 4071.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    },
+    {
+      "id": "scenario-03",
+      "s": 5571.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    },
+    {
+      "id": "scenario-04",
+      "s": 7071.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    },
+    {
+      "id": "scenario-05",
+      "s": 8571.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    },
+    {
+      "id": "scenario-06",
+      "s": 10071.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    },
+    {
+      "id": "scenario-07",
+      "s": 11571.0,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    },
+    {
+      "id": "scenario-08",
+      "s": 13018.28,
+      "tags": {
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "right",
+        "provenance": "SIMULATED_SCENARIO",
+        "note": "scenario block boundary; not mapped infrastructure"
+      }
+    }
+  ]
+}

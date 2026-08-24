@@ -109,40 +109,124 @@
   ],
   "buildings": {
     "source": "swissBUILDINGS3D 3.0 CityGML",
-    "classification": "REAL",
-    "format": "indexed Float32 positions + Uint32 indices",
+    "classification": "REAL geometry / DERIVED grounding and colours",
+    "format": "semantic indexed meshes with vertex colour",
     "tiles": [
       {
-        "positions": "./buildings/tile-0-d2003f3e89.positions.bin",
-        "indices": "./buildings/tile-0-d2003f3e89.indices.bin",
-        "buildingCount": 3619,
-        "vertices": 189527,
-        "triangles": 534821,
-        "bytes": 8692176
+        "buildingCount": 3618,
+        "surfaces": {
+          "roof": {
+            "positions": "./buildings/tile-0-roof-ec768ff654.positions.bin",
+            "indices": "./buildings/tile-0-roof-ec768ff654.indices.bin",
+            "colors": "./buildings/tile-0-roof-ec768ff654.colors.bin",
+            "vertices": 82574,
+            "triangles": 73636,
+            "bytes": 2122242
+          },
+          "wall": {
+            "positions": "./buildings/tile-0-wall-21fbb0dda6.positions.bin",
+            "indices": "./buildings/tile-0-wall-21fbb0dda6.indices.bin",
+            "colors": "./buildings/tile-0-wall-21fbb0dda6.colors.bin",
+            "vertices": 136401,
+            "triangles": 151175,
+            "bytes": 3860115
+          },
+          "other": {
+            "positions": "",
+            "indices": "",
+            "colors": "",
+            "vertices": 0,
+            "triangles": 0,
+            "bytes": 0
+          }
+        }
       },
       {
-        "positions": "./buildings/tile-1-7f3745ebf0.positions.bin",
-        "indices": "./buildings/tile-1-7f3745ebf0.indices.bin",
         "buildingCount": 985,
-        "vertices": 50001,
-        "triangles": 139315,
-        "bytes": 2271792
+        "surfaces": {
+          "roof": {
+            "positions": "./buildings/tile-1-roof-240c7815ce.positions.bin",
+            "indices": "./buildings/tile-1-roof-240c7815ce.indices.bin",
+            "colors": "./buildings/tile-1-roof-240c7815ce.colors.bin",
+            "vertices": 22300,
+            "triangles": 19416,
+            "bytes": 567492
+          },
+          "wall": {
+            "positions": "./buildings/tile-1-wall-faba86ed04.positions.bin",
+            "indices": "./buildings/tile-1-wall-faba86ed04.indices.bin",
+            "colors": "./buildings/tile-1-wall-faba86ed04.colors.bin",
+            "vertices": 35446,
+            "triangles": 39593,
+            "bytes": 1006806
+          },
+          "other": {
+            "positions": "",
+            "indices": "",
+            "colors": "",
+            "vertices": 0,
+            "triangles": 0,
+            "bytes": 0
+          }
+        }
       },
       {
-        "positions": "./buildings/tile-2-3c1539f267.positions.bin",
-        "indices": "./buildings/tile-2-3c1539f267.indices.bin",
-        "buildingCount": 997,
-        "vertices": 53390,
-        "triangles": 133010,
-        "bytes": 2236800
+        "buildingCount": 989,
+        "surfaces": {
+          "roof": {
+            "positions": "./buildings/tile-2-roof-418c062363.positions.bin",
+            "indices": "./buildings/tile-2-roof-418c062363.indices.bin",
+            "colors": "./buildings/tile-2-roof-418c062363.colors.bin",
+            "vertices": 21388,
+            "triangles": 18757,
+            "bytes": 545904
+          },
+          "wall": {
+            "positions": "./buildings/tile-2-wall-8d3f94361e.positions.bin",
+            "indices": "./buildings/tile-2-wall-8d3f94361e.indices.bin",
+            "colors": "./buildings/tile-2-wall-8d3f94361e.colors.bin",
+            "vertices": 33827,
+            "triangles": 37931,
+            "bytes": 962577
+          },
+          "other": {
+            "positions": "",
+            "indices": "",
+            "colors": "",
+            "vertices": 0,
+            "triangles": 0,
+            "bytes": 0
+          }
+        }
       },
       {
-        "positions": "./buildings/tile-3-25f79e205b.positions.bin",
-        "indices": "./buildings/tile-3-25f79e205b.indices.bin",
         "buildingCount": 2373,
-        "vertices": 126040,
-        "triangles": 313762,
-        "bytes": 5277624
+        "surfaces": {
+          "roof": {
+            "positions": "./buildings/tile-3-roof-5d3d180dc6.positions.bin",
+            "indices": "./buildings/tile-3-roof-5d3d180dc6.indices.bin",
+            "colors": "./buildings/tile-3-roof-5d3d180dc6.colors.bin",
+            "vertices": 48827,
+            "triangles": 43189,
+            "bytes": 1250673
+          },
+          "wall": {
+            "positions": "./buildings/tile-3-wall-c97d1927b6.positions.bin",
+            "indices": "./buildings/tile-3-wall-c97d1927b6.indices.bin",
+            "colors": "./buildings/tile-3-wall-c97d1927b6.colors.bin",
+            "vertices": 80409,
+            "triangles": 89473,
+            "bytes": 2279811
+          },
+          "other": {
+            "positions": "",
+            "indices": "",
+            "colors": "",
+            "vertices": 0,
+            "triangles": 0,
+            "bytes": 0
+          }
+        }
       }
     ],
     "sourceAssets": [
@@ -156,6 +240,7 @@
       "swissbuildings3d_3_0_2022_1133-11_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1133-12_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1133-21_2056_5728.citygml.zip"
-    ]
+    ],
+    "alignmentReport": "data/manifests/building-alignment.json"
   }
 }
