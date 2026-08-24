@@ -8,8 +8,8 @@ A browser-based open-data railway driving simulator for the real 13.47 km Rapper
 
 - Cab and chase cameras on an actual Swiss alignment
 - 120 Hz longitudinal physics with traction, service/emergency braking, resistance, gradient and energy
-- Real elevation strip, mapped speed sections, four route stops and 26 mapped signal positions
-- Procedural rails, sleepers and synthetic catenary
+- Regular swissALTI3D-derived terrain grid, mapped speed sections, four route stops and 26 mapped signal positions
+- Route-local procedural rails, ballast, sleepers and synthetic catenary
 - Speed, limit, gradient, next signal/station and engineering telemetry HUD
 - In-app real/derived/simulated provenance inspector
 
@@ -37,7 +37,7 @@ Pushes to `main` run tests, build Rust/WASM and Vite, and deploy through the off
 
 ## Limitations
 
-Terrain is a sampled corridor strip without orthophotography or buildings. Signal aspects and simplified authority are simulated, not live or recorded SBB state. No complete interlocking, ETCS/train-protection model, timetable, AI traffic, stop-result dialog, touch controls or certified train model is claimed.
+Terrain uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid and has no orthophotography or buildings. Signal aspects and simplified authority are simulated, not live or recorded SBB state. No complete interlocking, ETCS/train-protection model, timetable, AI traffic, stop-result dialog or certified train model is claimed.
 
 ## License and attribution
 

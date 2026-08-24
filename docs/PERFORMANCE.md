@@ -1,3 +1,3 @@
 # Performance
 
-Production build measured 24 August 2026: JavaScript 502 kB (127 kB gzip), WASM 15.6 kB (7.1 kB gzip), corridor JSON 52 kB, total `dist` 588 kB. The scene uses one 1,080-triangle terrain strip, two rail meshes, and instanced sleepers/catenary. The deployed app and corridor asset both returned HTTP 200 and its Playwright drive smoke test passed. FPS remains device-dependent and was not instrumented; no unsupported figure is claimed.
+Production build measured 24 August 2026: JavaScript 511 kB (130 kB gzip), WASM 15.6 kB (7.1 kB gzip), route JSON 92 kB and terrain JSON 60 kB. The 204 × 48 regular terrain grid has 9,792 vertices and 19,082 triangles over 15.225 × 3.525 km. The scene uses instanced sleepers/catenary and exposes FPS, draw calls and rendered triangles in `?debug=1` mode. Headless SwiftShader screenshot runs are not representative of hardware FPS, so no unsupported desktop figure is claimed.

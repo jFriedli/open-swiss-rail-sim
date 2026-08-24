@@ -1,42 +1,58 @@
 {
   "corridor": "Rapperswil\u2013Uznach",
-  "sourceCrs": "EPSG:4326 / LV95 height queries",
+  "sourceCrs": "EPSG:4326 \u2192 LV95 \u2192 local ENU-like",
   "localOrigin": {
     "lat": 47.2248117,
     "lon": 8.816853,
     "easting": 2704378.5390000623,
     "northing": 1231347.5672989446,
-    "elevation": 408.5
+    "elevation": 408.693
   },
   "bounds": {
-    "routeLengthM": 13470.9
+    "routeLengthM": 13468.3
   },
   "terrain": {
     "source": "swissALTI3D via geo.admin.ch height service",
-    "sampleSpacingM": 75,
-    "classification": "REAL elevation / DERIVED mesh",
-    "crossTrackOffsetsM": [
-      -1200,
-      -700,
-      -350,
-      0,
-      350,
-      700,
-      1200
-    ],
-    "samples": 637
+    "classification": "REAL samples / DERIVED grid, interpolation and railway cut-fill",
+    "gridSpacingM": 75,
+    "sourceSpacingM": 300,
+    "width": 204,
+    "height": 48,
+    "extentM": {
+      "x": 15225,
+      "z": 3525
+    },
+    "stats": {
+      "vertices": 9792,
+      "triangles": 19082,
+      "minElevationM": 405.4,
+      "maxElevationM": 592.38,
+      "largestTriangleEdgeM": 106.07,
+      "maxNeighbourElevationDeltaM": 39.4
+    }
   },
   "railway": {
     "source": "OpenStreetMap",
-    "routePoints": 91,
+    "routePoints": 540,
+    "sampleSpacingM": 25,
+    "verticalProfile": {
+      "method": "5-sample median + Gaussian low-pass (sigma 175 m)",
+      "minElevationM": 408.0,
+      "maxElevationM": 415.87,
+      "startElevationM": 408.69,
+      "endElevationM": 410.18,
+      "minGradientPermille": -5.01,
+      "maxGradientPermille": 9.11,
+      "meanAbsoluteGradientPermille": 2.81
+    },
     "signals": 26,
     "stations": 4,
-    "speedSections": 56,
+    "speedSections": 61,
     "classification": "REAL / OPEN_MAPPING"
   },
   "sources": [
     "swissALTI3D",
     "OpenStreetMap"
   ],
-  "generatedAt": "2026-08-24T15:16:12.177636+00:00"
+  "generatedAt": "2026-08-24T15:48:03.554401+00:00"
 }

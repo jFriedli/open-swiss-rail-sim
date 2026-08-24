@@ -5,7 +5,7 @@ Elevation samples come from the documented geo.admin.ch height service (Swiss
 national elevation model). Runtime coordinates are local ENU-like metres.
 """
 from __future__ import annotations
-import collections, datetime, heapq, json, math, pathlib, time, urllib.request
+import collections, concurrent.futures, datetime, heapq, json, math, pathlib, statistics, time, urllib.request
 
 SOURCE=pathlib.Path('data/intermediate/candidates/rapperswil_uznach.json')
 OUT=pathlib.Path('public/data/rapperswil-uznach')
@@ -33,6 +33,28 @@ def height(lat,lon):
             pass
     raise RuntimeError(f'height request failed: {lat},{lon}')
 
+def resample(path, spacing=25.0):
+    """Uniformly resample the complete polyline without dropping edge distance."""
+    cumulative=[0.0]
+    for a,b in zip(path,path[1:]): cumulative.append(cumulative[-1]+dist(a,b))
+    result=[];j=0
+    for target in [i*spacing for i in range(math.floor(cumulative[-1]/spacing)+1)]+[cumulative[-1]]:
+        while j+1<len(cumulative) and cumulative[j+1]<target:j+=1
+        if j+1==len(path):result.append(path[-1]);continue
+        span=cumulative[j+1]-cumulative[j];t=0 if span==0 else (target-cumulative[j])/span
+        result.append((path[j][0]+(path[j+1][0]-path[j][0])*t,path[j][1]+(path[j+1][1]-path[j][1])*t))
+    return result
+
+def smooth_profile(values, spacing=25.0, sigma_m=175.0):
+    """Median despike then Gaussian low-pass, preserving genuine long gradients."""
+    median=[]
+    for i in range(len(values)):median.append(statistics.median(values[max(0,i-2):min(len(values),i+3)]))
+    radius=math.ceil(3*sigma_m/spacing);out=[]
+    for i in range(len(values)):
+        weighted=[(median[j],math.exp(-.5*((j-i)*spacing/sigma_m)**2)) for j in range(max(0,i-radius),min(len(values),i+radius+1))]
+        out.append(sum(v*w for v,w in weighted)/sum(w for _,w in weighted))
+    return out
+
 def main():
     data=json.loads(SOURCE.read_text()); coords={}; graph=collections.defaultdict(list); ways=[]
     for w in data['elements']:
@@ -57,23 +79,23 @@ def main():
         if n==src:break
         n=prev[n]
     path.reverse()
-    # Resample to ~75 m so browser interpolation is smooth and API load bounded.
-    samples=[path[0]]; carry=0
-    for a,b in zip(path,path[1:]):
-        seg=dist(a,b);carry+=seg
-        if carry>=75:samples.append(b);carry=0
-    if samples[-1]!=path[-1]:samples.append(path[-1])
-    origin_ll=samples[0];oe,on=wgs_to_lv95(*origin_ll); heights=[]
+    samples=resample(path);origin_ll=samples[0];oe,on=wgs_to_lv95(*origin_ll); heights=[]
     cache=pathlib.Path('data/intermediate/heights.json')
     hc=json.loads(cache.read_text()) if cache.exists() else {}
-    for i,(lat,lon) in enumerate(samples):
-        key=f'{lat:.7f},{lon:.7f}'
-        if key not in hc: hc[key]=height(lat,lon);cache.write_text(json.dumps(hc));time.sleep(.05)
-        e,n=wgs_to_lv95(lat,lon);heights.append({'x':round(e-oe,2),'y':round(hc[key]-hc[f"{samples[0][0]:.7f},{samples[0][1]:.7f}"],2),'z':round(-(n-on),2),'lat':lat,'lon':lon,'elevation':hc[key]})
-        if i%25==0:print(f'elevation {i}/{len(samples)}')
-    # Project mapped objects to nearest sampled route point and retain source tags.
+    def sample_height(ll):
+        lat,lon=ll;key=f'{lat:.7f},{lon:.7f}'
+        return key,hc.get(key) if key in hc else height(lat,lon)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+      for i,(key,value) in enumerate(ex.map(sample_height,samples)):
+        hc[key]=value
+        if i%50==0:print(f'elevation {i}/{len(samples)}');cache.write_text(json.dumps(hc))
+    cache.write_text(json.dumps(hc));raw=[hc[f'{lat:.7f},{lon:.7f}'] for lat,lon in samples];smooth=smooth_profile(raw)
     cumulative=[0.0]
     for a,b in zip(samples,samples[1:]):cumulative.append(cumulative[-1]+dist(a,b))
+    for i,(lat,lon) in enumerate(samples):
+        key=f'{lat:.7f},{lon:.7f}'
+        e,n=wgs_to_lv95(lat,lon);heights.append({'s':round(cumulative[i],2),'x':round(e-oe,2),'y':round(smooth[i]-smooth[0],3),'z':round(-(n-on),2),'lat':lat,'lon':lon,'rawElevation':raw[i],'elevation':round(smooth[i],3)})
+    # Project mapped objects to nearest sampled route point and retain source tags.
     def objects(kind):
         out=[]
         for e in data['elements']:
@@ -92,7 +114,11 @@ def main():
             if dist(ll,samples[i])<25:near.append(cumulative[i])
         if near:limits.append({'start':round(min(near),1),'end':round(max(near),1),'speed':int(tag),'source':'OpenStreetMap','confidence':'OPEN_MAPPING'})
     OUT.mkdir(parents=True,exist_ok=True)
-    manifest={'corridor':'Rapperswil–Uznach','sourceCrs':'EPSG:4326 / LV95 height queries','localOrigin':{'lat':origin_ll[0],'lon':origin_ll[1],'easting':oe,'northing':on,'elevation':heights[0]['elevation']},'bounds':{'routeLengthM':round(cumulative[-1],1)},'terrain':{'source':'swissALTI3D via geo.admin.ch height service','sampleSpacingM':75,'classification':'REAL'},'railway':{'source':'OpenStreetMap','routePoints':len(heights),'signals':len(signals),'stations':len(stations),'speedSections':len(limits),'classification':'REAL / OPEN_MAPPING'},'sources':['swissALTI3D','OpenStreetMap'],'generatedAt':datetime.datetime.now(datetime.UTC).isoformat()}
+    gradients=[]
+    for i in range(len(smooth)):
+        a=max(0,i-2);b=min(len(smooth)-1,i+2);gradients.append((smooth[b]-smooth[a])/(cumulative[b]-cumulative[a])*1000)
+    profile={'method':'5-sample median + Gaussian low-pass (sigma 175 m)','minElevationM':round(min(smooth),2),'maxElevationM':round(max(smooth),2),'startElevationM':round(smooth[0],2),'endElevationM':round(smooth[-1],2),'minGradientPermille':round(min(gradients),2),'maxGradientPermille':round(max(gradients),2),'meanAbsoluteGradientPermille':round(sum(map(abs,gradients))/len(gradients),2)}
+    manifest={'corridor':'Rapperswil–Uznach','sourceCrs':'EPSG:4326 → LV95 → local ENU-like','localOrigin':{'lat':origin_ll[0],'lon':origin_ll[1],'easting':oe,'northing':on,'elevation':heights[0]['elevation']},'bounds':{'routeLengthM':round(cumulative[-1],1)},'terrain':{'source':'swissALTI3D via geo.admin.ch height service','classification':'REAL'},'railway':{'source':'OpenStreetMap','routePoints':len(heights),'sampleSpacingM':25,'verticalProfile':profile,'signals':len(signals),'stations':len(stations),'speedSections':len(limits),'classification':'REAL / OPEN_MAPPING'},'sources':['swissALTI3D','OpenStreetMap'],'generatedAt':datetime.datetime.now(datetime.UTC).isoformat()}
     (OUT/'route.json').write_text(json.dumps({'points':heights,'signals':signals,'stations':stations,'speedLimits':limits},separators=(',',':')))
     (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(json.dumps(manifest,indent=2))
