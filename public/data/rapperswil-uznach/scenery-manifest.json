@@ -1,0 +1,110 @@
+{
+  "corridor": "rapperswil-uznach",
+  "version": 2,
+  "crs": "EPSG:2056 \u2192 local X east, Y up, Z south",
+  "localOrigin": {
+    "lat": 47.2248117,
+    "lon": 8.816853,
+    "easting": 2704378.5390000623,
+    "northing": 1231347.5672989446,
+    "elevation": 408.693
+  },
+  "tiles": [
+    {
+      "id": "scenery-0",
+      "bounds": {
+        "minX": -1500,
+        "maxX": 2325,
+        "minZ": -1500,
+        "maxZ": 2025
+      },
+      "terrain": {
+        "columnStart": 0,
+        "columnEnd": 51
+      },
+      "imagery": {
+        "url": "./imagery/tile-0-e5d3100b48.webp",
+        "format": "WebP",
+        "width": 2048,
+        "height": 1887,
+        "metresPerPixel": 1.868,
+        "source": "SWISSIMAGE via official WMS",
+        "classification": "REAL"
+      }
+    },
+    {
+      "id": "scenery-1",
+      "bounds": {
+        "minX": 2325,
+        "maxX": 6150,
+        "minZ": -1500,
+        "maxZ": 2025
+      },
+      "terrain": {
+        "columnStart": 51,
+        "columnEnd": 102
+      },
+      "imagery": {
+        "url": "./imagery/tile-1-baa6267d8a.webp",
+        "format": "WebP",
+        "width": 2048,
+        "height": 1887,
+        "metresPerPixel": 1.868,
+        "source": "SWISSIMAGE via official WMS",
+        "classification": "REAL"
+      }
+    },
+    {
+      "id": "scenery-2",
+      "bounds": {
+        "minX": 6150,
+        "maxX": 9975,
+        "minZ": -1500,
+        "maxZ": 2025
+      },
+      "terrain": {
+        "columnStart": 102,
+        "columnEnd": 153
+      },
+      "imagery": {
+        "url": "./imagery/tile-2-946bca447a.webp",
+        "format": "WebP",
+        "width": 2048,
+        "height": 1887,
+        "metresPerPixel": 1.868,
+        "source": "SWISSIMAGE via official WMS",
+        "classification": "REAL"
+      }
+    },
+    {
+      "id": "scenery-3",
+      "bounds": {
+        "minX": 9975,
+        "maxX": 13725,
+        "minZ": -1500,
+        "maxZ": 2025
+      },
+      "terrain": {
+        "columnStart": 153,
+        "columnEnd": 203
+      },
+      "imagery": {
+        "url": "./imagery/tile-3-a6bef21fa7.webp",
+        "format": "WebP",
+        "width": 2048,
+        "height": 1925,
+        "metresPerPixel": 1.831,
+        "source": "SWISSIMAGE via official WMS",
+        "classification": "REAL"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "dataset": "SWISSIMAGE",
+      "publisher": "Federal Office of Topography swisstopo",
+      "access": "https://wms.geo.admin.ch/",
+      "attribution": "\u00a9 swisstopo"
+    }
+  ]
+}

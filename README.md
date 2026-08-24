@@ -9,6 +9,7 @@ A browser-based open-data railway driving simulator for the real 13.47 km Rapper
 - Cab and chase cameras on an actual Swiss alignment
 - 120 Hz longitudinal physics with traction, service/emergency braking, resistance, gradient and energy
 - Regular swissALTI3D-derived terrain grid, mapped speed sections, four route stops and 26 mapped signal positions
+- Real SWISSIMAGE ground imagery in four georeferenced, content-hashed scenery sectors
 - Route-local procedural rails, ballast, sleepers and synthetic catenary
 - Interactive combined traction/brake controller, emergency brake and speed/limit dial
 - Speed, limit, gradient, next signal/station and engineering telemetry HUD
