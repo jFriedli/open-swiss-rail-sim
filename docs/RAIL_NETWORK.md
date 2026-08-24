@@ -9,7 +9,7 @@ The corridor graph is generated from the cached OpenStreetMap rail extract by `s
 | Total mapped track | 31.54 km |
 | Mapped switches | 35 |
 | Connected components | 1 |
-| Player path edges | 102 |
+| Player path edges | 263 |
 | Platform associations | 10 |
 
 Every edge retains its OSM way ID, endpoint node IDs, source geometry, speed/electrification/service tags and length. Switch locations are open mapping; switch state and locking are simulated. The existing smoothed player spline remains the rendering/physics path but is matched to an ordered sequence of graph edges. Platform-to-edge associations are nearest-track derivations and remain subject to mapping ambiguity in multi-track station areas.
