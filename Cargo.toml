@@ -1,0 +1,4 @@
+[workspace]
+members = ["crates/rail-sim-core"]
+resolver = "2"
+

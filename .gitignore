@@ -1,0 +1,11 @@
+node_modules/
+dist/
+target/
+app/pkg/
+data/raw/
+data/intermediate/
+playwright-report/
+test-results/
+*.log
+.DS_Store
+
