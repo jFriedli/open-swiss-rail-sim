@@ -106,5 +106,56 @@
       "access": "https://wms.geo.admin.ch/",
       "attribution": "\u00a9 swisstopo"
     }
-  ]
+  ],
+  "buildings": {
+    "source": "swissBUILDINGS3D 3.0 CityGML",
+    "classification": "REAL",
+    "format": "indexed Float32 positions + Uint32 indices",
+    "tiles": [
+      {
+        "positions": "./buildings/tile-0-d2003f3e89.positions.bin",
+        "indices": "./buildings/tile-0-d2003f3e89.indices.bin",
+        "buildingCount": 3619,
+        "vertices": 189527,
+        "triangles": 534821,
+        "bytes": 8692176
+      },
+      {
+        "positions": "./buildings/tile-1-7f3745ebf0.positions.bin",
+        "indices": "./buildings/tile-1-7f3745ebf0.indices.bin",
+        "buildingCount": 985,
+        "vertices": 50001,
+        "triangles": 139315,
+        "bytes": 2271792
+      },
+      {
+        "positions": "./buildings/tile-2-3c1539f267.positions.bin",
+        "indices": "./buildings/tile-2-3c1539f267.indices.bin",
+        "buildingCount": 997,
+        "vertices": 53390,
+        "triangles": 133010,
+        "bytes": 2236800
+      },
+      {
+        "positions": "./buildings/tile-3-25f79e205b.positions.bin",
+        "indices": "./buildings/tile-3-25f79e205b.indices.bin",
+        "buildingCount": 2373,
+        "vertices": 126040,
+        "triangles": 313762,
+        "bytes": 5277624
+      }
+    ],
+    "sourceAssets": [
+      "swissbuildings3d_3_0_2022_1112-43_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1112-44_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1113-33_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1113-34_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1113-43_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1132-21_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1132-22_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1133-11_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1133-12_2056_5728.citygml.zip",
+      "swissbuildings3d_3_0_2022_1133-21_2056_5728.citygml.zip"
+    ]
+  }
 }
