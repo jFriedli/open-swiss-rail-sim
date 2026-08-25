@@ -26,6 +26,9 @@ A browser-based open-data railway driving simulator driven by versioned Swiss `R
 - 31.54 km OSM rail graph with 689 edges, 35 switches and surrounding station tracks
 - Three official-timetable AI services with deterministic motion, dwell and train-length occupancy
 - Simplified fail-safe section reservation, switch locking and traffic-driven signal aspects
+- Geographic NOAA sun model with service-date time, continuous day/twilight/night lighting and procedural sky
+- MeteoSwiss service-date observation field plus custom clear, overcast, rain, fog and snow environments
+- Wet surfaces, elevation-aware derived snow cover, precipitation, synthetic facade windows and night station lighting
 
 ## Controls
 
@@ -43,7 +46,7 @@ npm run build
 npm run dev
 ```
 
-See [architecture](docs/ARCHITECTURE.md), [national graph](docs/NATIONAL_RAIL_GRAPH.md), [service resolution](docs/SERVICE_RESOLUTION.md), [support analysis](docs/NATIONAL_SUPPORT_ANALYSIS.md), [route packages](docs/ROUTE_PACKAGE.md), [traffic](docs/TRAFFIC.md), [interlocking](docs/INTERLOCKING.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), and [performance](docs/PERFORMANCE.md).
+See [architecture](docs/ARCHITECTURE.md), [environment](docs/ENVIRONMENT.md), [weather](docs/WEATHER.md), [national graph](docs/NATIONAL_RAIL_GRAPH.md), [service resolution](docs/SERVICE_RESOLUTION.md), [route packages](docs/ROUTE_PACKAGE.md), [provenance](docs/DATA_PROVENANCE.md), and [performance](docs/PERFORMANCE.md).
 
 Generate and validate the configured compiler-proof routes from the pinned local source cache:
 
@@ -71,4 +74,4 @@ Rapperswil–Uznach is the `FULL` showcase. The other routes are `PARTIAL` compi
 
 ## License and attribution
 
-Project code is MIT licensed. Runtime data attribution: © swisstopo; © OpenStreetMap contributors, ODbL. Dataset details and transformations are documented in `docs/DATA_PROVENANCE.md`.
+Project code is MIT licensed. Runtime data attribution: © swisstopo; © OpenStreetMap contributors, ODbL; Source: MeteoSwiss. Dataset details and transformations are documented in `docs/DATA_PROVENANCE.md`.

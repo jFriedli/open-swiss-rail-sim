@@ -5,6 +5,7 @@
   "description": "13.47 km lakeside and Linth-plain S17 corridor",
   "supportTier": "FULL",
   "sourceDate": "2026-08-22",
+  "timezone": "Europe/Zurich",
   "localOriginLv95": {"easting":2704378.539,"northing":1231347.567,"elevation":408.693},
   "boundsLv95": {"minEasting":2702878.539,"maxEasting":2718103.539,"minNorthing":1229322.567,"maxNorthing":1232847.567},
   "routeLengthM": 13468.3,

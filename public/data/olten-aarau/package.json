@@ -5,6 +5,7 @@
   "description": "Busy multi-track main line through the Aare valley",
   "supportTier": "PARTIAL",
   "sourceDate": "2026-08-22",
+  "timezone": "Europe/Zurich",
   "localOriginLv95": {
     "easting": 2635415.374433959,
     "northing": 1244681.3395347998,

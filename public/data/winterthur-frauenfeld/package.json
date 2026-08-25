@@ -5,6 +5,7 @@
   "description": "Automatically resolved official Swiss timetable service",
   "supportTier": "PARTIAL",
   "sourceDate": "2026-08-22",
+  "timezone": "Europe/Zurich",
   "localOriginLv95": {
     "easting": 2696822.2313578003,
     "northing": 1261861.9639129865,

@@ -5,6 +5,7 @@
   "description": "Curving and climbing regional line through the rolling Bernese landscape",
   "supportTier": "PARTIAL",
   "sourceDate": "2026-08-22",
+  "timezone": "Europe/Zurich",
   "localOriginLv95": {
     "easting": 2605096.3515419774,
     "northing": 1198125.5373235384,

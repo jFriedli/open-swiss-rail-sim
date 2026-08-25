@@ -9,3 +9,5 @@ Required assets are `route`, `terrain`, `scenery`, `landscape`, `journey`, `rail
 New packages record the national graph content hash used for resolution. Scenery manifests may reference content-addressed assets in the shared `/data/tiles` store; package validation resolves and checks these relative references before publication.
 
 Support tiers are `FULL`, `PARTIAL` and `UNSUPPORTED`. The current runtime targets standard-gauge adhesion railways. A route may be partial when public signal, speed, platform or scenery coverage is incomplete; the coverage report must expose that rather than silently inventing authoritative data.
+
+Environment initialization uses package `sourceDate`, player-service time, route WGS84 samples and terrain elevation. A package does not embed a permanent weather toggle. The runtime looks up an optional date-specific weather field and otherwise uses a documented custom fallback, so every schema-v1 route receives the same environment implementation.
