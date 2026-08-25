@@ -1,10 +1,13 @@
 # Open Swiss Rail Sim
 
-A browser-based open-data railway driving simulator for the real 13.47 km Rapperswil–Uznach alignment. It combines Swiss national elevation, orthophotography and 3D building data with mapped landscape/railway infrastructure and deterministic Rust/WASM train physics. Operational state is explicitly simulated.
+A browser-based open-data railway driving simulator driven by versioned Swiss `RoutePackage` datasets. Three real corridors use the same Three.js and Rust/WASM engine; operational state is explicitly simulated.
 
 **Live simulator:** https://jfriedli.com/open-swiss-rail-sim/
 
 ## Features
+
+- Selectable Rapperswil–Uznach, Olten–Aarau and Gümligen–Konolfingen route packages
+- Generic build-time compiler for official timetable trips, mapped rail topology, terrain and imagery
 
 - Cab and chase cameras on an actual Swiss alignment
 - 120 Hz longitudinal physics with traction, service/emergency braking, resistance, gradient and energy
@@ -40,13 +43,20 @@ npm run dev
 
 See [architecture](docs/ARCHITECTURE.md), [rail network](docs/RAIL_NETWORK.md), [traffic](docs/TRAFFIC.md), [interlocking](docs/INTERLOCKING.md), [scenery](docs/SCENERY.md), [journey](docs/JOURNEY.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), [physics](docs/PHYSICS.md), [signalling](docs/SIGNALLING.md), [selection](docs/CORRIDOR_SELECTION.md), and [performance](docs/PERFORMANCE.md).
 
+Generate and validate the two compiler-proof routes from the pinned local source cache:
+
+```sh
+python3 scripts/route_compiler.py --all
+python3 scripts/data/validate_route_packages.py
+```
+
 ## Deployment
 
 Pushes to `main` run tests, build Rust/WASM and Vite, and deploy through the official GitHub Pages Actions flow. Vite uses relative asset paths so repository subpath hosting works.
 
 ## Limitations
 
-Terrain still uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid, so small embankments and cuts are simplified. Orthophotography is intentionally reduced to about 1.85 m/pixel. Trees are synthetic instances within real mapped forest boundaries; roads, water and platforms use open-mapping geometry rather than swissTLM3D in this build. Roof colours are derived from orthophotography and walls use a muted deterministic palette, not official material data. OpenStreetMap signal coverage ends near s=1.07 km, so eight clearly classified scenario signals fill the gameplay gap. Detection sections, switch states, route locking, AI motion and signal aspects are simplified simulations, not SBB operational data. No complete SBB interlocking, ETCS/train-protection model or certified train model is claimed.
+Rapperswil–Uznach is the `FULL` showcase. Olten–Aarau and Gümligen–Konolfingen are `PARTIAL` compiler proofs: they include real terrain, imagery, timetable and railway topology but omit the showcase's swissBUILDINGS3D and complete landscape payload. Terrain uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid, so small embankments and cuts are simplified. Detection sections, switch states, route locking, AI motion and signal aspects are simplified simulations, not SBB operational data. No complete SBB interlocking, ETCS/train-protection model or certified train model is claimed.
 
 ## License and attribution
 

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "id": "olten-aarau",
+  "name": "Olten \u2192 Aarau",
+  "description": "Busy multi-track main line through the Aare valley",
+  "supportTier": "PARTIAL",
+  "sourceDate": "2026-08-22",
+  "localOriginLv95": {
+    "easting": 2635415.374433959,
+    "northing": 1244681.3395347998,
+    "elevation": 396.3
+  },
+  "boundsLv95": {
+    "minEasting": 2634215.374433959,
+    "maxEasting": 2647490.374433959,
+    "minNorthing": 1243256.3395347998,
+    "maxNorthing": 1250381.3395347998
+  },
+  "routeLengthM": 13377.7,
+  "playerService": {
+    "name": "2175",
+    "tripId": ".ojp-91-16-B.1.TA.406.j26",
+    "serviceDate": "2026-08-22"
+  },
+  "assets": {
+    "route": "route.json",
+    "terrain": "terrain.json",
+    "scenery": "scenery-manifest.json",
+    "landscape": "landscape.json",
+    "journey": "journey.json",
+    "railNetwork": "rail-network.json",
+    "traffic": "traffic.json"
+  },
+  "capabilities": {
+    "standardGauge": true,
+    "adhesion": true,
+    "conventionalSignals": true,
+    "etcsL2": false,
+    "rack": false,
+    "tram": false
+  },
+  "coverage": {
+    "mappedSignals": 37,
+    "scenarioSignals": 2,
+    "speedLimit": 1,
+    "platformMatching": 1.0
+  },
+  "sources": {
+    "terrain": {
+      "classification": "REAL",
+      "dataset": "swissALTI3D",
+      "date": "2026-08-25"
+    },
+    "imagery": {
+      "classification": "REAL",
+      "dataset": "SWISSIMAGE",
+      "date": "2026-08-25"
+    },
+    "railway": {
+      "classification": "OPEN_MAPPING",
+      "dataset": "OpenStreetMap cached corridor extract",
+      "date": "2026-08-24"
+    },
+    "timetable": {
+      "classification": "REAL",
+      "dataset": "gtfs_fp2026_20260822.zip",
+      "date": "2026-08-22"
+    },
+    "operations": {
+      "classification": "SIMULATED",
+      "dataset": "Open Swiss Rail Sim operating model"
+    }
+  },
+  "testCheckpoints": [
+    {
+      "id": "start",
+      "s": 0,
+      "kind": "start"
+    },
+    {
+      "id": "quarter",
+      "s": 3344,
+      "kind": "route"
+    },
+    {
+      "id": "middle",
+      "s": 6689,
+      "kind": "route"
+    },
+    {
+      "id": "junction",
+      "s": 10033,
+      "kind": "network"
+    },
+    {
+      "id": "end",
+      "s": 13358,
+      "kind": "end"
+    }
+  ],
+  "compileReport": {
+    "railPath": {
+      "status": "ok",
+      "coverage": 1
+    },
+    "signals": {
+      "mapped": 37,
+      "scenario": 2,
+      "largestMappedGapM": null
+    },
+    "speedLimits": {
+      "coverage": 1
+    },
+    "platforms": {
+      "coverage": 1.0
+    },
+    "traffic": {
+      "services": 1,
+      "status": "ok"
+    }
+  },
+  "packageBytes": 2548931
+}

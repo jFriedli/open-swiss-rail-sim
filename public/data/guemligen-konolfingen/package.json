@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "id": "guemligen-konolfingen",
+  "name": "G\u00fcmligen \u2192 Konolfingen",
+  "description": "Curving and climbing regional line through the rolling Bernese landscape",
+  "supportTier": "PARTIAL",
+  "sourceDate": "2026-08-22",
+  "localOriginLv95": {
+    "easting": 2605096.3515419774,
+    "northing": 1198125.5373235384,
+    "elevation": 561.6999999999999
+  },
+  "boundsLv95": {
+    "minEasting": 2603896.3515419774,
+    "maxEasting": 2615146.3515419774,
+    "minNorthing": 1190550.5373235384,
+    "maxNorthing": 1199325.5373235384
+  },
+  "routeLengthM": 12804.4,
+  "playerService": {
+    "name": "15251",
+    "tripId": ".ojp-91-2-A.1.TA.1438.j26",
+    "serviceDate": "2026-08-22"
+  },
+  "assets": {
+    "route": "route.json",
+    "terrain": "terrain.json",
+    "scenery": "scenery-manifest.json",
+    "landscape": "landscape.json",
+    "journey": "journey.json",
+    "railNetwork": "rail-network.json",
+    "traffic": "traffic.json"
+  },
+  "capabilities": {
+    "standardGauge": true,
+    "adhesion": true,
+    "conventionalSignals": false,
+    "etcsL2": false,
+    "rack": false,
+    "tram": false
+  },
+  "coverage": {
+    "mappedSignals": 0,
+    "scenarioSignals": 8,
+    "speedLimit": 1.0,
+    "platformMatching": 1.0
+  },
+  "sources": {
+    "terrain": {
+      "classification": "REAL",
+      "dataset": "swissALTI3D",
+      "date": "2026-08-25"
+    },
+    "imagery": {
+      "classification": "REAL",
+      "dataset": "SWISSIMAGE",
+      "date": "2026-08-25"
+    },
+    "railway": {
+      "classification": "OPEN_MAPPING",
+      "dataset": "OpenStreetMap cached corridor extract",
+      "date": "2026-08-24"
+    },
+    "timetable": {
+      "classification": "REAL",
+      "dataset": "gtfs_fp2026_20260822.zip",
+      "date": "2026-08-22"
+    },
+    "operations": {
+      "classification": "SIMULATED",
+      "dataset": "Open Swiss Rail Sim operating model"
+    }
+  },
+  "testCheckpoints": [
+    {
+      "id": "start",
+      "s": 0,
+      "kind": "start"
+    },
+    {
+      "id": "quarter",
+      "s": 3201,
+      "kind": "route"
+    },
+    {
+      "id": "middle",
+      "s": 6402,
+      "kind": "route"
+    },
+    {
+      "id": "junction",
+      "s": 9603,
+      "kind": "network"
+    },
+    {
+      "id": "end",
+      "s": 12784,
+      "kind": "end"
+    }
+  ],
+  "compileReport": {
+    "railPath": {
+      "status": "ok",
+      "coverage": 1
+    },
+    "signals": {
+      "mapped": 0,
+      "scenario": 8,
+      "largestMappedGapM": null
+    },
+    "speedLimits": {
+      "coverage": 1.0
+    },
+    "platforms": {
+      "coverage": 1.0
+    },
+    "traffic": {
+      "services": 1,
+      "status": "ok"
+    }
+  },
+  "packageBytes": 1588107
+}

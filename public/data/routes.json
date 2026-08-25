@@ -1,1 +1,62 @@
-{"schemaVersion":1,"routes":[{"id":"rapperswil-uznach","name":"Rapperswil SG → Uznach","description":"Lakeside and Linth-plain S17 corridor","supportTier":"FULL","routeLengthM":13468.3,"playerService":{"name":"S17 12353","tripId":".ojp-91-17-M.1.TA.200.j26","serviceDate":"2026-08-22"},"coverage":{"mappedSignals":10,"scenarioSignals":8,"speedLimit":0.91,"platformMatching":1.0},"packageBytes":15800000}]}
+{
+  "schemaVersion": 1,
+  "routes": [
+    {
+      "id": "rapperswil-uznach",
+      "name": "Rapperswil SG \u2192 Uznach",
+      "description": "13.47 km lakeside and Linth-plain S17 corridor",
+      "supportTier": "FULL",
+      "routeLengthM": 13468.3,
+      "playerService": {
+        "name": "S17 12353",
+        "tripId": ".ojp-91-17-M.1.TA.200.j26",
+        "serviceDate": "2026-08-22"
+      },
+      "coverage": {
+        "mappedSignals": 10,
+        "scenarioSignals": 8,
+        "speedLimit": 0.91,
+        "platformMatching": 1.0
+      },
+      "packageBytes": 15800000
+    },
+    {
+      "id": "guemligen-konolfingen",
+      "name": "G\u00fcmligen \u2192 Konolfingen",
+      "description": "Curving and climbing regional line through the rolling Bernese landscape",
+      "supportTier": "PARTIAL",
+      "routeLengthM": 12804.4,
+      "playerService": {
+        "name": "15251",
+        "tripId": ".ojp-91-2-A.1.TA.1438.j26",
+        "serviceDate": "2026-08-22"
+      },
+      "coverage": {
+        "mappedSignals": 0,
+        "scenarioSignals": 8,
+        "speedLimit": 1.0,
+        "platformMatching": 1.0
+      },
+      "packageBytes": 1588107
+    },
+    {
+      "id": "olten-aarau",
+      "name": "Olten \u2192 Aarau",
+      "description": "Busy multi-track main line through the Aare valley",
+      "supportTier": "PARTIAL",
+      "routeLengthM": 13377.7,
+      "playerService": {
+        "name": "2175",
+        "tripId": ".ojp-91-16-B.1.TA.406.j26",
+        "serviceDate": "2026-08-22"
+      },
+      "coverage": {
+        "mappedSignals": 37,
+        "scenarioSignals": 2,
+        "speedLimit": 1,
+        "platformMatching": 1.0
+      },
+      "packageBytes": 2548931
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Data provenance
 
+Each `RoutePackage` carries its own source snapshot metadata and classifications. Generated routes use real official swissALTI3D heights, real official SWISSIMAGE, open-mapped OSM rail/platform infrastructure and official static GTFS calls. Path selection, terrain/imagery conversion, graph normalization, scenario signals and AI paths are derived. Positions, physics, occupancy, route locking, aspects and scoring are simulated.
+
 | Dataset | Publisher | Source/terms | Downloaded | Extent | Processing | Distributed |
 |---|---|---|---|---|---|---|
 | OpenStreetMap railway infrastructure | OpenStreetMap contributors | Overpass API; ODbL 1.0; attribution: © OpenStreetMap contributors | 2026-08-24 | Rapperswil–Uznach candidate bbox | route graph, Dijkstra path, local projection, signal/station matching, speed-section extraction | derived compact JSON |

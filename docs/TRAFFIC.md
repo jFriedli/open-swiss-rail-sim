@@ -1,5 +1,7 @@
 # Timetable traffic
 
+Generated packages select an official reverse-direction GTFS trip in the same operating window. Calls are real; graph path, continuous position and movement are derived/simulated. AI now uses a deterministic controller with acceleration, service braking, speed-limit priority and a movement-authority hold point. Safety and authority take precedence over timetable recovery.
+
 The default operating window is 13:55–14:25 on Saturday 22 August 2026. `scripts/data/build_traffic.py` filters official static feed `GTFS_FP2026_20260822.zip` by calendar and exception dates, corridor stops, and time window. The earlier player trip ID was an inactive calendar variant; the active equivalent is S17 trip `.ojp-91-17-M.1.TA.200.j26`, public train 12353.
 
 Three AI services are retained:

@@ -7,5 +7,6 @@ data/intermediate/
 playwright-report/
 test-results/
 *.log
+__pycache__/
+*.pyc
 .DS_Store
-

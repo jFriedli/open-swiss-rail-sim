@@ -1,5 +1,7 @@
 # Simplified interlocking
 
+Reservations can be updated progressively. Sections and switch locks removed from a train's requested window are released only when no occupant or other route needs them; newly requested sections pass the same fail-restrictive checks. AI authority denial feeds its driver instead of permitting timetable playback through Halt.
+
 > This is a simplified simulated railway-safety model built from public infrastructure data. It does not reproduce SBB's operational interlocking configuration.
 
 Each OSM-derived graph edge is a simulated detection section. Occupancy is distinct from reservation and accounts for the complete 75 m AI train, including simultaneous occupation across edge boundaries. Missing sections return `UNKNOWN` and fail restrictive.
