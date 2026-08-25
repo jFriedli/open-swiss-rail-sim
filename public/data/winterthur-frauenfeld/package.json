@@ -122,7 +122,7 @@
   "packageBytes": 623995,
   "nationalRailGraph": {
     "schemaVersion": 1,
-    "contentHash": "sha256:483b518b16785e51fd282d7e9f2b1fb36bc24f1937e72a97cda4ae1ffbb3b390",
+    "contentHash": "sha256:93b95311c59649c1c7f21eb8988fc2e12def1ada8b997372b3f951328b8f516e",
     "source": {
       "name": "switzerland-2026-08-24.osm.pbf",
       "derivedInput": "supported-rail.osm.pbf",

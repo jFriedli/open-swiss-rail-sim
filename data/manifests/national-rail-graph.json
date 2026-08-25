@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentHash": "sha256:483b518b16785e51fd282d7e9f2b1fb36bc24f1937e72a97cda4ae1ffbb3b390",
+  "contentHash": "sha256:93b95311c59649c1c7f21eb8988fc2e12def1ada8b997372b3f951328b8f516e",
   "source": {
     "name": "switzerland-2026-08-24.osm.pbf",
     "derivedInput": "supported-rail.osm.pbf",
@@ -16,6 +16,8 @@
   "largestComponentNodes": 272489,
   "switchNodes": 17430,
   "mappedSignals": 7510,
+  "stations": 1979,
+  "platforms": 16645,
   "veryShortEdges": 436,
   "branchNodes": 17615,
   "unsupportedWays": {
@@ -24,7 +26,7 @@
     "gauge:1435;1800": 6,
     "gauge:1453": 3
   },
-  "uncompressedBytes": 44433451,
-  "compressedBytes": 6457308,
-  "buildSeconds": 5.64
+  "uncompressedBytes": 45382562,
+  "compressedBytes": 6782344,
+  "buildSeconds": 7.06
 }
