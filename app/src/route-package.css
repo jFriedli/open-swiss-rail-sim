@@ -18,3 +18,15 @@
 }
 .routeChoices a.selected { border-color: #58c98c; background: #123126; }
 .routeChoices small { opacity: .72; text-align: right; }
+.serviceSearch { display:grid; grid-template-columns:1fr 1fr 130px 100px auto; gap:9px; align-items:end; margin:16px 0; padding:13px; border:1px solid #426254; background:#0b1b16; border-radius:8px; }
+.serviceSearch h2 { grid-column:1/-1; margin:0; color:#d8e8de; font-size:.75rem; letter-spacing:.14em; }
+.serviceSearch label { font-size:.58rem; letter-spacing:.12em; color:#9db1a6; }
+.serviceSearch input { display:block; box-sizing:border-box; width:100%; margin-top:4px; border:1px solid #557466; border-radius:4px; background:#e8eee9; color:#14221b; padding:8px; }
+.serviceSearch button { padding:9px; }
+.serviceSearch #serviceResults { grid-column:1/-1; max-height:180px; overflow:auto; }
+.serviceSearch article { display:grid; grid-template-columns:1fr auto; gap:3px 12px; padding:8px 0; border-top:1px solid #294239; }
+.serviceSearch article span { grid-column:1; }
+.serviceSearch article em { font-size:.58rem; font-style:normal; color:#e3c66c; }
+.serviceSearch article a { grid-column:2; grid-row:1/3; align-self:center; color:#8be0ad; }
+.featuredTitle { font-size:.68rem; letter-spacing:.12em; color:#9db1a6; }
+@media(max-width:850px){.serviceSearch{grid-template-columns:1fr 1fr}.serviceSearch h2,.serviceSearch #serviceResults{grid-column:1/-1}}

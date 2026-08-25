@@ -57,6 +57,25 @@
         "platformMatching": 1.0
       },
       "packageBytes": 2548931
+    },
+    {
+      "id": "winterthur-frauenfeld",
+      "name": "Winterthur \u2192 Frauenfeld",
+      "description": "Automatically resolved official Swiss timetable service",
+      "supportTier": "PARTIAL",
+      "routeLengthM": 16003.1,
+      "playerService": {
+        "name": "8051",
+        "tripId": ".ojp-91-30-A.1.TA.337.j26",
+        "serviceDate": "2026-08-22"
+      },
+      "coverage": {
+        "mappedSignals": 49,
+        "scenarioSignals": 1,
+        "speedLimit": 1,
+        "platformMatching": 1.0
+      },
+      "packageBytes": 623995
     }
   ]
 }

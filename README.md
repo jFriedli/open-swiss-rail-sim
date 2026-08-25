@@ -1,13 +1,15 @@
 # Open Swiss Rail Sim
 
-A browser-based open-data railway driving simulator driven by versioned Swiss `RoutePackage` datasets. Three real corridors use the same Three.js and Rust/WASM engine; operational state is explicitly simulated.
+A browser-based open-data railway driving simulator driven by versioned Swiss `RoutePackage` datasets. Four real corridors use the same Three.js and Rust/WASM engine; operational state is explicitly simulated. A national timetable index and supported-class rail resolver provide the path toward service-driven compilation.
 
 **Live simulator:** https://jfriedli.com/open-swiss-rail-sim/
 
 ## Features
 
-- Selectable Rapperswil–Uznach, Olten–Aarau and Gümligen–Konolfingen route packages
+- Search 17,194 active official timetable trips by origin, destination and time
+- Selectable Rapperswil–Uznach, Olten–Aarau, Gümligen–Konolfingen and Winterthur–Frauenfeld packages
 - Generic build-time compiler for official timetable trips, mapped rail topology, terrain and imagery
+- National standard-gauge-compatible OSM graph with explicit support classification
 
 - Cab and chase cameras on an actual Swiss alignment
 - 120 Hz longitudinal physics with traction, service/emergency braking, resistance, gradient and energy
@@ -41,13 +43,22 @@ npm run build
 npm run dev
 ```
 
-See [architecture](docs/ARCHITECTURE.md), [rail network](docs/RAIL_NETWORK.md), [traffic](docs/TRAFFIC.md), [interlocking](docs/INTERLOCKING.md), [scenery](docs/SCENERY.md), [journey](docs/JOURNEY.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), [physics](docs/PHYSICS.md), [signalling](docs/SIGNALLING.md), [selection](docs/CORRIDOR_SELECTION.md), and [performance](docs/PERFORMANCE.md).
+See [architecture](docs/ARCHITECTURE.md), [national graph](docs/NATIONAL_RAIL_GRAPH.md), [service resolution](docs/SERVICE_RESOLUTION.md), [support analysis](docs/NATIONAL_SUPPORT_ANALYSIS.md), [route packages](docs/ROUTE_PACKAGE.md), [traffic](docs/TRAFFIC.md), [interlocking](docs/INTERLOCKING.md), [pipeline](docs/DATA_PIPELINE.md), [provenance](docs/DATA_PROVENANCE.md), and [performance](docs/PERFORMANCE.md).
 
-Generate and validate the two compiler-proof routes from the pinned local source cache:
+Generate and validate the configured compiler-proof routes from the pinned local source cache:
 
 ```sh
 python3 scripts/route_compiler.py --all
 python3 scripts/data/validate_route_packages.py
+```
+
+An unconfigured trip can be compiled without a route-definition entry:
+
+```sh
+.venv/bin/python scripts/route_compiler.py \
+  --trip-id '.ojp-91-30-A.1.TA.337.j26' \
+  --from-station Winterthur --to-station Frauenfeld \
+  --service-date 2026-08-22 --id winterthur-frauenfeld
 ```
 
 ## Deployment
@@ -56,7 +67,7 @@ Pushes to `main` run tests, build Rust/WASM and Vite, and deploy through the off
 
 ## Limitations
 
-Rapperswil–Uznach is the `FULL` showcase. Olten–Aarau and Gümligen–Konolfingen are `PARTIAL` compiler proofs: they include real terrain, imagery, timetable and railway topology but omit the showcase's swissBUILDINGS3D and complete landscape payload. Terrain uses 300 m swissALTI3D source samples interpolated to a stable 75 m render grid, so small embankments and cuts are simplified. Detection sections, switch states, route locking, AI motion and signal aspects are simplified simulations, not SBB operational data. No complete SBB interlocking, ETCS/train-protection model or certified train model is claimed.
+Rapperswil–Uznach is the `FULL` showcase. The other routes are `PARTIAL` compiler proofs: they include real terrain, imagery, timetable and railway topology but omit the showcase's swissBUILDINGS3D and complete landscape payload. Searchability does not imply driveability; only committed packages expose a Select action. The national graph currently targets standard-gauge-compatible adhesion railways and leaves many narrow-gauge, tram, rack, foreign or topology-ambiguous trips unsupported/unresolved. Terrain uses 300 m swissALTI3D samples interpolated to a stable 75 m render grid. Detection sections, route locking, AI motion and signal aspects are simplified simulations, not SBB operational data.
 
 ## License and attribution
 

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "winterthur-frauenfeld",
+  "name": "Winterthur \u2192 Frauenfeld",
+  "description": "Automatically resolved official Swiss timetable service",
+  "supportTier": "PARTIAL",
+  "sourceDate": "2026-08-22",
+  "localOriginLv95": {
+    "easting": 2696822.2313578003,
+    "northing": 1261861.9639129865,
+    "elevation": 438.8666666666666
+  },
+  "boundsLv95": {
+    "minEasting": 2695622.2313578003,
+    "maxEasting": 2710997.2313578003,
+    "minNorthing": 1260661.9639129865,
+    "maxNorthing": 1269811.9639129865
+  },
+  "routeLengthM": 16003.1,
+  "playerService": {
+    "name": "8051",
+    "tripId": ".ojp-91-30-A.1.TA.337.j26",
+    "serviceDate": "2026-08-22"
+  },
+  "assets": {
+    "route": "route.json",
+    "terrain": "terrain.json",
+    "scenery": "scenery-manifest.json",
+    "landscape": "landscape.json",
+    "journey": "journey.json",
+    "railNetwork": "rail-network.json",
+    "traffic": "traffic.json"
+  },
+  "capabilities": {
+    "standardGauge": true,
+    "adhesion": true,
+    "conventionalSignals": true,
+    "etcsL2": false,
+    "rack": false,
+    "tram": false
+  },
+  "coverage": {
+    "mappedSignals": 49,
+    "scenarioSignals": 1,
+    "speedLimit": 1,
+    "platformMatching": 1.0
+  },
+  "sources": {
+    "terrain": {
+      "classification": "REAL",
+      "dataset": "swissALTI3D",
+      "date": "2026-08-25"
+    },
+    "imagery": {
+      "classification": "REAL",
+      "dataset": "SWISSIMAGE",
+      "date": "2026-08-25"
+    },
+    "railway": {
+      "classification": "OPEN_MAPPING",
+      "dataset": "OpenStreetMap cached corridor extract",
+      "date": "2026-08-24"
+    },
+    "timetable": {
+      "classification": "REAL",
+      "dataset": "gtfs_fp2026_20260822.zip",
+      "date": "2026-08-22"
+    },
+    "operations": {
+      "classification": "SIMULATED",
+      "dataset": "Open Swiss Rail Sim operating model"
+    }
+  },
+  "testCheckpoints": [
+    {
+      "id": "start",
+      "s": 0,
+      "kind": "start"
+    },
+    {
+      "id": "quarter",
+      "s": 4001,
+      "kind": "route"
+    },
+    {
+      "id": "middle",
+      "s": 8002,
+      "kind": "route"
+    },
+    {
+      "id": "junction",
+      "s": 12002,
+      "kind": "network"
+    },
+    {
+      "id": "end",
+      "s": 15983,
+      "kind": "end"
+    }
+  ],
+  "compileReport": {
+    "railPath": {
+      "status": "ok",
+      "coverage": 1
+    },
+    "signals": {
+      "mapped": 49,
+      "scenario": 1,
+      "largestMappedGapM": null
+    },
+    "speedLimits": {
+      "coverage": 1
+    },
+    "platforms": {
+      "coverage": 1.0
+    },
+    "traffic": {
+      "services": 1,
+      "status": "ok"
+    }
+  },
+  "packageBytes": 623995,
+  "nationalRailGraph": {
+    "schemaVersion": 1,
+    "contentHash": "sha256:483b518b16785e51fd282d7e9f2b1fb36bc24f1937e72a97cda4ae1ffbb3b390",
+    "source": {
+      "name": "switzerland-2026-08-24.osm.pbf",
+      "derivedInput": "supported-rail.osm.pbf",
+      "publisher": "Geofabrik extract of OpenStreetMap",
+      "date": "2026-08-24",
+      "license": "ODbL"
+    }
+  },
+  "sharedAssetBytes": 1886506
+}

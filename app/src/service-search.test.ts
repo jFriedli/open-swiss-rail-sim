@@ -1,0 +1,3 @@
+import {describe,it,expect} from 'vitest';import {normalizeStation,searchServices,type ServiceIndex} from './service-search';
+const index:ServiceIndex={schemaVersion:1,serviceDate:'2026-08-22',stations:[['a','Zürich HB',0,0,'zuerich hb'],['b','Chur',0,0,'chur'],['c','Bern',0,0,'bern']],trips:[['trip','IC 3','563','Chur',[0,1],[65000,69000],[65220,69000]],['wrong','IR','1','Bern',[0,2],[1,2],[1,2]]]};
+describe('national service search',()=>{it('normalizes Swiss aliases',()=>expect(normalizeStation('Zürich HB')).toBe('zurich hb'));it('finds an ordered direct trip',()=>expect(searchServices(index,'Zurich HB','Chur',65000)[0].tripId).toBe('trip'));it('does not reverse stop order',()=>expect(searchServices(index,'Chur','Zurich HB',65000)).toEqual([]))});
