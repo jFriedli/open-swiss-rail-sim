@@ -63,6 +63,11 @@ def main():
         key=(train['publicName'],train['direction'],tuple((s['name'],s['arrival'],s['departure']) for s in train['stops']))
         unique.setdefault(key,train)
     selected=list(unique.values());centre=14*3600+8*60
+    scenario_clock=sec(journey['scenarioStart']);player_start_edges=set(network['playerRouteEdges'][:8])
+    def safe_initial_occupancy(train):
+        first=train['stops'][0];active=sec(first['arrival'])<=scenario_clock<=sec(first['departure']);occupied={part['edgeId'] for part in train['path'][:8]}
+        return not(active and occupied&player_start_edges)
+    selected=[train for train in selected if safe_initial_occupancy(train)]
     selected.sort(key=lambda x:min(abs(sec(s['departure'] or s['arrival'])-centre) for s in x['stops']))
     opposing=[x for x in selected if x['direction']=='Uznach → Rapperswil' and sec(x['stops'][-1]['arrival'])>=14*3600+3*60];forward=[x for x in selected if x['direction']=='Rapperswil → Uznach' and x['tripId']!=journey['service']['tripId']]
     selected=(opposing[:3]+forward[:2])[:5]

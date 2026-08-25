@@ -12,7 +12,7 @@ import json, math, pathlib, random, urllib.parse, urllib.request
 
 RAW=pathlib.Path('data/raw/scenery/osm-landscape.json')
 OUT=pathlib.Path('public/data/rapperswil-uznach/landscape.json')
-MANIFEST=pathlib.Path('public/data/rapperswil-uznach/manifest.json')
+PACKAGE=pathlib.Path('public/data/rapperswil-uznach/package.json')
 ROUTE=pathlib.Path('public/data/rapperswil-uznach/route.json')
 QUERY='''[out:json][timeout:180];(way[natural=water](47.195,8.79,47.255,9.02);relation[natural=water](47.195,8.79,47.255,9.02);way[landuse=forest](47.195,8.79,47.255,9.02);way[natural=wood](47.195,8.79,47.255,9.02);way[highway~"motorway|trunk|primary|secondary|tertiary|residential"](47.195,8.79,47.255,9.02);way[railway=platform](47.195,8.79,47.255,9.02););out geom;'''
 
@@ -73,7 +73,7 @@ def clip(poly,bounds):
     return [[round(x,1),round(z,1)] for x,z in output]+([[round(output[0][0],1),round(output[0][1],1)]] if output else [])
 
 def main():
-    fetch(); raw=json.loads(RAW.read_text()); origin=json.loads(MANIFEST.read_text())['localOrigin'];oe,on=origin['easting'],origin['northing']
+    fetch(); raw=json.loads(RAW.read_text()); origin=json.loads(PACKAGE.read_text())['localOriginLv95'];oe,on=origin['easting'],origin['northing']
     route=[(p['x'],p['z']) for p in json.loads(ROUTE.read_text())['points']]
     def clear_of_track(p):
         for a,b in zip(route,route[1:]):

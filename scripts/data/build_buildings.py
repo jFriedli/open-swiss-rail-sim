@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Build grounded, semantic, batched swissBUILDINGS3D runtime meshes."""
 from __future__ import annotations
-import hashlib,json,math,pathlib,statistics,struct,urllib.parse,urllib.request,zipfile
+import argparse,hashlib,json,math,pathlib,statistics,struct,urllib.parse,urllib.request,zipfile
 import xml.etree.ElementTree as ET
 from PIL import Image
 
 PRODUCT='ch.swisstopo.swissbuildings3d_3_0';API='https://ogd.swisstopo.admin.ch/services/swiseld/services'
-RAW=pathlib.Path('data/raw/scenery/buildings');OUT=pathlib.Path('public/data/rapperswil-uznach/buildings');MANIFEST=pathlib.Path('public/data/rapperswil-uznach/manifest.json');SCENERY=pathlib.Path('public/data/rapperswil-uznach/scenery-manifest.json');TERRAIN=pathlib.Path('public/data/rapperswil-uznach/terrain.json');REPORT=pathlib.Path('data/manifests/building-alignment.json')
+RAW=pathlib.Path('data/raw/scenery/buildings')
 GML='{http://www.opengis.net/gml}';BLDG='{http://www.opengis.net/citygml/building/2.0}';SURFACES={'roof':BLDG+'RoofSurface','wall':BLDG+'WallSurface','ground':BLDG+'GroundSurface','other':BLDG+'ClosureSurface'}
 WALL_PALETTE=((196,184,160),(181,181,174),(209,193,155),(169,181,184),(198,169,145),(184,151,137),(207,202,187))
 
@@ -38,14 +38,14 @@ def percentile(values,p):
     ordered=sorted(values);return ordered[min(len(ordered)-1,round((len(ordered)-1)*p))]
 
 def main():
-    origin=json.loads(MANIFEST.read_text())['localOrigin'];oe,on,oh=origin['easting'],origin['northing'],origin['elevation'];terrain=json.loads(TERRAIN.read_text());scenery=json.loads(SCENERY.read_text())
-    local=(-1500,13725,-1500,2025);lv95=(oe+local[0],oe+local[1],on-local[3],on-local[2]);RAW.mkdir(parents=True,exist_ok=True);OUT.mkdir(parents=True,exist_ok=True);REPORT.parent.mkdir(parents=True,exist_ok=True)
+    parser=argparse.ArgumentParser();parser.add_argument('--route',default='rapperswil-uznach');args=parser.parse_args();package_dir=pathlib.Path('public/data')/args.route;package_path=package_dir/'package.json';package=json.loads(package_path.read_text());SCENERY=package_dir/package['assets']['scenery'];TERRAIN=package_dir/package['assets']['terrain'];OUT=package_dir/'buildings';REPORT=pathlib.Path('data/manifests')/f'{args.route}-building-alignment.json'
+    origin=package['localOriginLv95'];oe,on,oh=origin['easting'],origin['northing'],origin['elevation'];terrain=json.loads(TERRAIN.read_text());scenery=json.loads(SCENERY.read_text());bounds=[t['bounds'] for t in scenery['tiles']];local=(min(b['minX'] for b in bounds),max(b['maxX'] for b in bounds),min(b['minZ'] for b in bounds),max(b['maxZ'] for b in bounds));lv95=(oe+local[0],oe+local[1],on-local[3],on-local[2]);RAW.mkdir(parents=True,exist_ok=True);OUT.mkdir(parents=True,exist_ok=True);REPORT.parent.mkdir(parents=True,exist_ok=True)
     def terrain_at(x,z):
         gx=max(0,min(terrain['width']-1.001,(x-terrain['originX'])/terrain['spacingM']));gz=max(0,min(terrain['height']-1.001,(z-terrain['originZ'])/terrain['spacingM']));x0=int(gx);z0=int(gz);tx=gx-x0;tz=gz-z0;h=terrain['heights'];w=terrain['width']
         return (h[z0*w+x0]*(1-tx)+h[z0*w+x0+1]*tx)*(1-tz)+(h[(z0+1)*w+x0]*(1-tx)+h[(z0+1)*w+x0+1]*tx)*tz
     tile_ranges=[(x['bounds']['minX'],x['bounds']['maxX']) for x in scenery['tiles']];imagery=[]
     for tile in scenery['tiles']:
-        cache=RAW.parent/'swissimage'/f"tile-{tile['id'].split('-')[-1]}-{tile['imagery']['width']}x{tile['imagery']['height']}.jpg";imagery.append((tile['bounds'],Image.open(cache).convert('RGB')))
+        image_path=(SCENERY.parent/tile['imagery']['url']).resolve();imagery.append((tile['bounds'],Image.open(image_path).convert('RGB')))
     def roof_colour(x,z):
         for bounds,image in imagery:
             if bounds['minX']<=x<=bounds['maxX'] and bounds['minZ']<=z<=bounds['maxZ']:
@@ -97,6 +97,6 @@ def main():
         runtime.append(entry)
     used={pathlib.Path(v[key]).name for t in runtime for v in t['surfaces'].values() for key in ('positions','indices','colors') if v[key]};[p.unlink() for p in OUT.glob('*.bin') if p.name not in used]
     absolute=[abs(x) for x in deltas];report={'buildings':sum(counts),'withGroundSurface':ground_count,'medianBaseTerrainDeltaM':round(statistics.median(deltas),3),'p95AbsoluteDeltaM':round(percentile(absolute,.95),3),'maximumPositiveDeltaM':round(max(deltas),3),'maximumNegativeDeltaM':round(min(deltas),3),'countOver1M':sum(x>1 for x in absolute),'countOver3M':sum(x>3 for x in absolute),'countOver10M':sum(x>10 for x in absolute),'corrected':sum(abs(x)>.01 for x in corrections),'largestMismatches':sorted(large,key=lambda x:abs(x['deltaM']),reverse=True)[:100],'semanticPolygons':semantic,'degenerateRejected':degenerate}
-    REPORT.write_text(json.dumps(report,indent=2)+'\n');scenery['buildings']={'source':'swissBUILDINGS3D 3.0 CityGML','classification':'REAL geometry / DERIVED grounding and colours','format':'semantic indexed meshes with vertex colour','tiles':runtime,'sourceAssets':source_assets,'alignmentReport':'data/manifests/building-alignment.json'};SCENERY.write_text(json.dumps(scenery,indent=2)+'\n')
+    REPORT.write_text(json.dumps(report,indent=2)+'\n');scenery['buildings']={'source':'swissBUILDINGS3D 3.0 CityGML','classification':'REAL geometry / DERIVED grounding and colours','format':'semantic indexed meshes with vertex colour','tiles':runtime,'sourceAssets':source_assets,'alignmentReport':str(REPORT)};SCENERY.write_text(json.dumps(scenery,indent=2)+'\n');package['sources']['buildings']={'classification':'REAL','dataset':'swissBUILDINGS3D 3.0'};package['packageBytes']=sum(p.stat().st_size for p in package_dir.rglob('*') if p.is_file());package_path.write_text(json.dumps(package,indent=2)+'\n')
     print(json.dumps({**{k:report[k] for k in ('buildings','withGroundSurface','medianBaseTerrainDeltaM','p95AbsoluteDeltaM','maximumPositiveDeltaM','maximumNegativeDeltaM','countOver1M','countOver3M','countOver10M','corrected','degenerateRejected')},'semanticPolygons':semantic,'bytes':total_bytes,'perTile':counts},indent=2))
 if __name__=='__main__':main()

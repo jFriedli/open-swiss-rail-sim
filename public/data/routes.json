@@ -4,21 +4,21 @@
     {
       "id": "rapperswil-uznach",
       "name": "Rapperswil SG \u2192 Uznach",
-      "description": "13.47 km lakeside and Linth-plain S17 corridor",
-      "supportTier": "FULL",
-      "routeLengthM": 13468.3,
+      "description": "Lakeside S-Bahn service along the upper Lake Zurich shore",
+      "supportTier": "PARTIAL",
+      "routeLengthM": 12783.1,
       "playerService": {
-        "name": "S17 12353",
+        "name": "12353",
         "tripId": ".ojp-91-17-M.1.TA.200.j26",
         "serviceDate": "2026-08-22"
       },
       "coverage": {
         "mappedSignals": 10,
-        "scenarioSignals": 8,
-        "speedLimit": 0.91,
+        "scenarioSignals": 7,
+        "speedLimit": 1,
         "platformMatching": 1.0
       },
-      "packageBytes": 15800000
+      "packageBytes": 12756558
     },
     {
       "id": "guemligen-konolfingen",

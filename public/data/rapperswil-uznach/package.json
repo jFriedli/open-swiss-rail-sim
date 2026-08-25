@@ -1,26 +1,140 @@
 {
   "schemaVersion": 1,
   "id": "rapperswil-uznach",
-  "name": "Rapperswil SG → Uznach",
-  "description": "13.47 km lakeside and Linth-plain S17 corridor",
-  "supportTier": "FULL",
+  "name": "Rapperswil SG \u2192 Uznach",
+  "description": "Lakeside S-Bahn service along the upper Lake Zurich shore",
+  "supportTier": "PARTIAL",
   "sourceDate": "2026-08-22",
   "timezone": "Europe/Zurich",
-  "localOriginLv95": {"easting":2704378.539,"northing":1231347.567,"elevation":408.693},
-  "boundsLv95": {"minEasting":2702878.539,"maxEasting":2718103.539,"minNorthing":1229322.567,"maxNorthing":1232847.567},
-  "routeLengthM": 13468.3,
-  "playerService": {"name":"S17 12353","tripId":".ojp-91-17-M.1.TA.200.j26","serviceDate":"2026-08-22"},
-  "assets": {"route":"route.json","terrain":"terrain.json","scenery":"scenery-manifest.json","landscape":"landscape.json","journey":"journey.json","railNetwork":"rail-network.json","traffic":"traffic.json"},
-  "capabilities": {"standardGauge":true,"adhesion":true,"conventionalSignals":true,"etcsL2":false,"rack":false,"tram":false},
-  "coverage": {"mappedSignals":10,"scenarioSignals":8,"speedLimit":0.91,"platformMatching":1.0},
-  "sources": {
-    "terrain":{"classification":"REAL","dataset":"swissALTI3D","date":"2026-08-24"},
-    "imagery":{"classification":"REAL","dataset":"SWISSIMAGE","date":"2026-08-24"},
-    "buildings":{"classification":"REAL","dataset":"swissBUILDINGS3D","date":"2026-08-24"},
-    "railway":{"classification":"OPEN_MAPPING","dataset":"OpenStreetMap","date":"2026-08-24"},
-    "timetable":{"classification":"REAL","dataset":"GTFS_FP2026_20260822.zip","date":"2026-08-22"},
-    "operations":{"classification":"SIMULATED","dataset":"Open Swiss Rail Sim operating model"}
+  "localOriginLv95": {
+    "easting": 2704383.6209307127,
+    "northing": 1231316.5665617832,
+    "elevation": 408.43333333333334
   },
-  "testCheckpoints": [{"id":"start","s":0,"kind":"start"},{"id":"quarter","s":3367,"kind":"route"},{"id":"middle","s":6734,"kind":"route"},{"id":"junction","s":11000,"kind":"traffic-conflict"},{"id":"end","s":13450,"kind":"end"}],
-  "packageBytes": 15800000
+  "boundsLv95": {
+    "minEasting": 2703183.6209307127,
+    "maxEasting": 2718033.6209307127,
+    "minNorthing": 1229291.5665617832,
+    "maxNorthing": 1232891.5665617832
+  },
+  "routeLengthM": 12783.1,
+  "playerService": {
+    "name": "12353",
+    "tripId": ".ojp-91-17-M.1.TA.200.j26",
+    "serviceDate": "2026-08-22"
+  },
+  "assets": {
+    "route": "route.json",
+    "terrain": "terrain.json",
+    "scenery": "scenery-manifest.json",
+    "landscape": "landscape.json",
+    "journey": "journey.json",
+    "railNetwork": "rail-network.json",
+    "traffic": "traffic.json"
+  },
+  "capabilities": {
+    "standardGauge": true,
+    "adhesion": true,
+    "conventionalSignals": true,
+    "etcsL2": false,
+    "rack": false,
+    "tram": false
+  },
+  "coverage": {
+    "mappedSignals": 10,
+    "scenarioSignals": 7,
+    "speedLimit": 1,
+    "platformMatching": 1.0
+  },
+  "sources": {
+    "terrain": {
+      "classification": "REAL",
+      "dataset": "swissALTI3D",
+      "date": "2026-08-25"
+    },
+    "imagery": {
+      "classification": "REAL",
+      "dataset": "SWISSIMAGE",
+      "date": "2026-08-25"
+    },
+    "railway": {
+      "classification": "OPEN_MAPPING",
+      "dataset": "OpenStreetMap cached corridor extract",
+      "date": "2026-08-24"
+    },
+    "timetable": {
+      "classification": "REAL",
+      "dataset": "gtfs_fp2026_20260822.zip",
+      "date": "2026-08-22"
+    },
+    "operations": {
+      "classification": "SIMULATED",
+      "dataset": "Open Swiss Rail Sim operating model"
+    },
+    "buildings": {
+      "classification": "REAL",
+      "dataset": "swissBUILDINGS3D 3.0"
+    }
+  },
+  "testCheckpoints": [
+    {
+      "id": "start",
+      "s": 0,
+      "kind": "start"
+    },
+    {
+      "id": "quarter",
+      "s": 3196,
+      "kind": "route"
+    },
+    {
+      "id": "middle",
+      "s": 6392,
+      "kind": "route"
+    },
+    {
+      "id": "junction",
+      "s": 9587,
+      "kind": "network"
+    },
+    {
+      "id": "end",
+      "s": 12763,
+      "kind": "end"
+    }
+  ],
+  "compileReport": {
+    "railPath": {
+      "status": "ok",
+      "coverage": 1
+    },
+    "signals": {
+      "mapped": 10,
+      "scenario": 7,
+      "largestMappedGapM": null
+    },
+    "speedLimits": {
+      "coverage": 1
+    },
+    "platforms": {
+      "coverage": 1.0
+    },
+    "traffic": {
+      "services": 1,
+      "status": "ok"
+    }
+  },
+  "packageBytes": 12816884,
+  "nationalRailGraph": {
+    "schemaVersion": 1,
+    "contentHash": "sha256:93b95311c59649c1c7f21eb8988fc2e12def1ada8b997372b3f951328b8f516e",
+    "source": {
+      "name": "switzerland-2026-08-24.osm.pbf",
+      "derivedInput": "supported-rail.osm.pbf",
+      "publisher": "Geofabrik extract of OpenStreetMap",
+      "date": "2026-08-24",
+      "license": "ODbL"
+    }
+  },
+  "sharedAssetBytes": 577174
 }

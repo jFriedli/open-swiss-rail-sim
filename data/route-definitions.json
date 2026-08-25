@@ -1,4 +1,5 @@
 {
+  "rapperswil-uznach": {"name":"Rapperswil SG → Uznach","description":"Lakeside S-Bahn service along the upper Lake Zurich shore","candidate":"rapperswil_uznach","origin":"Rapperswil SG","destination":"Uznach","serviceDate":"2026-08-22","preferredDeparture":"14:03:00"},
   "olten-aarau": {"name":"Olten → Aarau","description":"Busy multi-track main line through the Aare valley","candidate":"olten_lenzburg","origin":"Olten","destination":"Aarau","serviceDate":"2026-08-22","preferredDeparture":"14:00:00"},
   "guemligen-konolfingen": {"name":"Gümligen → Konolfingen","description":"Curving and climbing regional line through the rolling Bernese landscape","candidate":"bern_thun_north","origin":"Gümligen","destination":"Konolfingen","serviceDate":"2026-08-22","preferredDeparture":"14:00:00"}
 }

@@ -1,7 +1,7 @@
 {
   "stats": {
     "candidateTrips": 81,
-    "selectedAiServices": 3,
+    "selectedAiServices": 2,
     "playerTripActiveOnDate": true
   },
   "services": [
@@ -46,23 +46,6 @@
           "Rapperswil SG",
           "14:27:00",
           "14:27:00"
-        ]
-      ]
-    },
-    {
-      "tripId": ".ojp-91-VAE.1.TA.426.j26",
-      "name": "2025",
-      "direction": "Rapperswil \u2192 Uznach",
-      "stops": [
-        [
-          "Rapperswil SG",
-          "14:03:00",
-          "14:07:00"
-        ],
-        [
-          "Uznach",
-          "14:17:00",
-          "14:17:00"
         ]
       ]
     }

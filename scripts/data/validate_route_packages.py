@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fail CI when a committed RoutePackage is incomplete or internally invalid."""
 import json,pathlib,sys
+from route_quality import validate_package
 
 ROOT=pathlib.Path(__file__).resolve().parents[2];DATA=ROOT/'public/data';errors=[]
 catalog=json.loads((DATA/'routes.json').read_text())
@@ -32,6 +33,11 @@ for entry in catalog.get('routes',[]):
         if any(b['targetS']<a['targetS'] for a,b in zip(journey['stops'],journey['stops'][1:])):errors.append(f"{entry['id']}: station ordering invalid")
         if any(not 0<=checkpoint['s']<=length+10 for checkpoint in package['testCheckpoints']):errors.append(f"{entry['id']}: checkpoint outside route")
     except Exception as exc:errors.append(f"{entry['id']}: validation exception: {exc}")
+    try:
+        quality=validate_package(package_dir)
+        package['qualityValidation']=quality
+        for issue in quality['errors']:errors.append(f"{entry['id']}: {issue['code']}: {issue['detail']}")
+    except Exception as exc:errors.append(f"{entry['id']}: quality validation exception: {exc}")
     print(f"{entry['id']}: {package['supportTier']} · {package['routeLengthM']/1000:.2f} km · {len(package.get('testCheckpoints',[]))} checkpoints")
 if errors:
     print('\n'.join('ERROR '+error for error in errors),file=sys.stderr);raise SystemExit(1)

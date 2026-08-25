@@ -3,97 +3,103 @@
   "version": 2,
   "crs": "EPSG:2056 \u2192 local X east, Y up, Z south",
   "localOrigin": {
-    "lat": 47.2248117,
-    "lon": 8.816853,
-    "easting": 2704378.5390000623,
-    "northing": 1231347.5672989446,
-    "elevation": 408.693
+    "easting": 2704383.6209307127,
+    "northing": 1231316.5665617832,
+    "elevation": 408.43333333333334
   },
   "tiles": [
     {
       "id": "scenery-0",
+      "geographicId": "lv95-2703200-1229300-2706900-1232900",
+      "contentHash": "600769a8b9b3b585",
       "bounds": {
-        "minX": -1500,
-        "maxX": 2325,
-        "minZ": -1500,
+        "minX": -1200,
+        "maxX": 2550,
+        "minZ": -1575,
         "maxZ": 2025
       },
       "terrain": {
         "columnStart": 0,
-        "columnEnd": 51
+        "columnEnd": 50
       },
       "imagery": {
-        "url": "./imagery/tile-0-e5d3100b48.webp",
+        "url": "../tiles/imagery/swissimage-600769a8b9b3b585.webp",
         "format": "WebP",
-        "width": 2048,
-        "height": 1887,
-        "metresPerPixel": 1.868,
+        "width": 1024,
+        "height": 983,
+        "metresPerPixel": 3.66,
         "source": "SWISSIMAGE via official WMS",
         "classification": "REAL"
       }
     },
     {
       "id": "scenery-1",
+      "geographicId": "lv95-2706900-1229300-2710600-1232900",
+      "contentHash": "5f194b38592fa287",
       "bounds": {
-        "minX": 2325,
-        "maxX": 6150,
-        "minZ": -1500,
+        "minX": 2550,
+        "maxX": 6225,
+        "minZ": -1575,
         "maxZ": 2025
       },
       "terrain": {
-        "columnStart": 51,
-        "columnEnd": 102
+        "columnStart": 50,
+        "columnEnd": 99
       },
       "imagery": {
-        "url": "./imagery/tile-1-baa6267d8a.webp",
+        "url": "../tiles/imagery/swissimage-5f194b38592fa287.webp",
         "format": "WebP",
-        "width": 2048,
-        "height": 1887,
-        "metresPerPixel": 1.868,
+        "width": 1024,
+        "height": 1003,
+        "metresPerPixel": 3.59,
         "source": "SWISSIMAGE via official WMS",
         "classification": "REAL"
       }
     },
     {
       "id": "scenery-2",
+      "geographicId": "lv95-2710600-1229300-2714300-1232900",
+      "contentHash": "8947f34437486080",
       "bounds": {
-        "minX": 6150,
-        "maxX": 9975,
-        "minZ": -1500,
+        "minX": 6225,
+        "maxX": 9900,
+        "minZ": -1575,
         "maxZ": 2025
       },
       "terrain": {
-        "columnStart": 102,
-        "columnEnd": 153
+        "columnStart": 99,
+        "columnEnd": 148
       },
       "imagery": {
-        "url": "./imagery/tile-2-946bca447a.webp",
+        "url": "../tiles/imagery/swissimage-8947f34437486080.webp",
         "format": "WebP",
-        "width": 2048,
-        "height": 1887,
-        "metresPerPixel": 1.868,
+        "width": 1024,
+        "height": 1003,
+        "metresPerPixel": 3.59,
         "source": "SWISSIMAGE via official WMS",
         "classification": "REAL"
       }
     },
     {
       "id": "scenery-3",
+      "geographicId": "lv95-2714300-1229300-2718000-1232900",
+      "contentHash": "39fd0aef448ba274",
       "bounds": {
-        "minX": 9975,
-        "maxX": 13725,
-        "minZ": -1500,
+        "minX": 9900,
+        "maxX": 13650,
+        "minZ": -1575,
         "maxZ": 2025
       },
       "terrain": {
-        "columnStart": 153,
-        "columnEnd": 203
+        "columnStart": 148,
+        "columnEnd": 198
       },
       "imagery": {
-        "url": "./imagery/tile-3-a6bef21fa7.webp",
+        "url": "../tiles/imagery/swissimage-39fd0aef448ba274.webp",
         "format": "WebP",
-        "width": 2048,
-        "height": 1925,
-        "metresPerPixel": 1.831,
+        "width": 1024,
+        "height": 983,
+        "metresPerPixel": 3.66,
         "source": "SWISSIMAGE via official WMS",
         "classification": "REAL"
       }
@@ -102,8 +108,7 @@
   "sources": [
     {
       "dataset": "SWISSIMAGE",
-      "publisher": "Federal Office of Topography swisstopo",
-      "access": "https://wms.geo.admin.ch/",
+      "publisher": "swisstopo",
       "attribution": "\u00a9 swisstopo"
     }
   ],
@@ -113,23 +118,23 @@
     "format": "semantic indexed meshes with vertex colour",
     "tiles": [
       {
-        "buildingCount": 3618,
+        "buildingCount": 3827,
         "surfaces": {
           "roof": {
-            "positions": "./buildings/tile-0-roof-ec768ff654.positions.bin",
-            "indices": "./buildings/tile-0-roof-ec768ff654.indices.bin",
-            "colors": "./buildings/tile-0-roof-ec768ff654.colors.bin",
-            "vertices": 82574,
-            "triangles": 73636,
-            "bytes": 2122242
+            "positions": "./buildings/tile-0-roof-801f1c8b87.positions.bin",
+            "indices": "./buildings/tile-0-roof-801f1c8b87.indices.bin",
+            "colors": "./buildings/tile-0-roof-801f1c8b87.colors.bin",
+            "vertices": 87295,
+            "triangles": 77599,
+            "bytes": 2240613
           },
           "wall": {
-            "positions": "./buildings/tile-0-wall-a5ceb0c970.positions.bin",
-            "indices": "./buildings/tile-0-wall-a5ceb0c970.indices.bin",
-            "colors": "./buildings/tile-0-wall-a5ceb0c970.colors.bin",
-            "vertices": 136404,
-            "triangles": 151175,
-            "bytes": 3860160
+            "positions": "./buildings/tile-0-wall-d2f09803cb.positions.bin",
+            "indices": "./buildings/tile-0-wall-d2f09803cb.indices.bin",
+            "colors": "./buildings/tile-0-wall-d2f09803cb.colors.bin",
+            "vertices": 144747,
+            "triangles": 160646,
+            "bytes": 4098957
           },
           "other": {
             "positions": "",
@@ -142,23 +147,23 @@
         }
       },
       {
-        "buildingCount": 985,
+        "buildingCount": 806,
         "surfaces": {
           "roof": {
-            "positions": "./buildings/tile-1-roof-240c7815ce.positions.bin",
-            "indices": "./buildings/tile-1-roof-240c7815ce.indices.bin",
-            "colors": "./buildings/tile-1-roof-240c7815ce.colors.bin",
-            "vertices": 22300,
-            "triangles": 19416,
-            "bytes": 567492
+            "positions": "./buildings/tile-1-roof-43ac7f61db.positions.bin",
+            "indices": "./buildings/tile-1-roof-43ac7f61db.indices.bin",
+            "colors": "./buildings/tile-1-roof-43ac7f61db.colors.bin",
+            "vertices": 18384,
+            "triangles": 16096,
+            "bytes": 468912
           },
           "wall": {
-            "positions": "./buildings/tile-1-wall-153d4da492.positions.bin",
-            "indices": "./buildings/tile-1-wall-153d4da492.indices.bin",
-            "colors": "./buildings/tile-1-wall-153d4da492.colors.bin",
-            "vertices": 35452,
-            "triangles": 39593,
-            "bytes": 1006896
+            "positions": "./buildings/tile-1-wall-1a0836c8ae.positions.bin",
+            "indices": "./buildings/tile-1-wall-1a0836c8ae.indices.bin",
+            "colors": "./buildings/tile-1-wall-1a0836c8ae.colors.bin",
+            "vertices": 28518,
+            "triangles": 31762,
+            "bytes": 808914
           },
           "other": {
             "positions": "",
@@ -171,23 +176,23 @@
         }
       },
       {
-        "buildingCount": 989,
+        "buildingCount": 992,
         "surfaces": {
           "roof": {
-            "positions": "./buildings/tile-2-roof-418c062363.positions.bin",
-            "indices": "./buildings/tile-2-roof-418c062363.indices.bin",
-            "colors": "./buildings/tile-2-roof-418c062363.colors.bin",
-            "vertices": 21388,
-            "triangles": 18757,
-            "bytes": 545904
+            "positions": "./buildings/tile-2-roof-2407529d82.positions.bin",
+            "indices": "./buildings/tile-2-roof-2407529d82.indices.bin",
+            "colors": "./buildings/tile-2-roof-2407529d82.colors.bin",
+            "vertices": 21563,
+            "triangles": 18936,
+            "bytes": 550677
           },
           "wall": {
-            "positions": "./buildings/tile-2-wall-37144bc4a0.positions.bin",
-            "indices": "./buildings/tile-2-wall-37144bc4a0.indices.bin",
-            "colors": "./buildings/tile-2-wall-37144bc4a0.colors.bin",
-            "vertices": 33827,
-            "triangles": 37931,
-            "bytes": 962577
+            "positions": "./buildings/tile-2-wall-da06b539f8.positions.bin",
+            "indices": "./buildings/tile-2-wall-da06b539f8.indices.bin",
+            "colors": "./buildings/tile-2-wall-da06b539f8.colors.bin",
+            "vertices": 34004,
+            "triangles": 38141,
+            "bytes": 967752
           },
           "other": {
             "positions": "",
@@ -200,23 +205,23 @@
         }
       },
       {
-        "buildingCount": 2373,
+        "buildingCount": 2380,
         "surfaces": {
           "roof": {
-            "positions": "./buildings/tile-3-roof-5d3d180dc6.positions.bin",
-            "indices": "./buildings/tile-3-roof-5d3d180dc6.indices.bin",
-            "colors": "./buildings/tile-3-roof-5d3d180dc6.colors.bin",
-            "vertices": 48827,
-            "triangles": 43189,
-            "bytes": 1250673
+            "positions": "./buildings/tile-3-roof-d1439526b5.positions.bin",
+            "indices": "./buildings/tile-3-roof-d1439526b5.indices.bin",
+            "colors": "./buildings/tile-3-roof-d1439526b5.colors.bin",
+            "vertices": 48736,
+            "triangles": 43100,
+            "bytes": 1248240
           },
           "wall": {
-            "positions": "./buildings/tile-3-wall-7807fea698.positions.bin",
-            "indices": "./buildings/tile-3-wall-7807fea698.indices.bin",
-            "colors": "./buildings/tile-3-wall-7807fea698.colors.bin",
-            "vertices": 80396,
-            "triangles": 89473,
-            "bytes": 2279616
+            "positions": "./buildings/tile-3-wall-9d05692941.positions.bin",
+            "indices": "./buildings/tile-3-wall-9d05692941.indices.bin",
+            "colors": "./buildings/tile-3-wall-9d05692941.colors.bin",
+            "vertices": 79935,
+            "triangles": 88930,
+            "bytes": 2266185
           },
           "other": {
             "positions": "",
@@ -230,17 +235,15 @@
       }
     ],
     "sourceAssets": [
-      "swissbuildings3d_3_0_2022_1112-43_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1112-44_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1113-33_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1113-34_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1113-43_2056_5728.citygml.zip",
-      "swissbuildings3d_3_0_2022_1132-21_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1132-22_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1133-11_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1133-12_2056_5728.citygml.zip",
       "swissbuildings3d_3_0_2022_1133-21_2056_5728.citygml.zip"
     ],
-    "alignmentReport": "data/manifests/building-alignment.json"
+    "alignmentReport": "data/manifests/rapperswil-uznach-building-alignment.json"
   }
 }
