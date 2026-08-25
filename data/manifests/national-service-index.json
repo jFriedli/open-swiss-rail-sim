@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "serviceDate": "2026-08-22",
+  "stations": 4504,
+  "trips": 17194,
+  "services": 381,
+  "bytes": 4471068,
+  "buildSeconds": 58.46
+}

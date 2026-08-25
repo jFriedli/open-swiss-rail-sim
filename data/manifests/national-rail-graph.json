@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "contentHash": "sha256:483b518b16785e51fd282d7e9f2b1fb36bc24f1937e72a97cda4ae1ffbb3b390",
+  "source": {
+    "name": "switzerland-2026-08-24.osm.pbf",
+    "derivedInput": "supported-rail.osm.pbf",
+    "publisher": "Geofabrik extract of OpenStreetMap",
+    "date": "2026-08-24",
+    "license": "ODbL"
+  },
+  "compiler": "scripts/national/rail_graph.py v1",
+  "nodes": 296833,
+  "edges": 302622,
+  "totalTrackKm": 9703.6,
+  "connectedComponents": 608,
+  "largestComponentNodes": 272489,
+  "switchNodes": 17430,
+  "mappedSignals": 7510,
+  "veryShortEdges": 436,
+  "branchNodes": 17615,
+  "unsupportedWays": {
+    "gauge:1000;1435": 201,
+    "gauge:1000": 5,
+    "gauge:1435;1800": 6,
+    "gauge:1453": 3
+  },
+  "uncompressedBytes": 44433451,
+  "compressedBytes": 6457308,
+  "buildSeconds": 5.64
+}

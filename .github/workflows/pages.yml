@@ -22,6 +22,7 @@ jobs:
       - run: npm run build
       - run: python3 scripts/data/validate_corridor.py
       - run: python3 scripts/data/validate_route_packages.py
+      - run: python3 scripts/national/validate.py
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
       - uses: actions/configure-pages@v5
